@@ -24,19 +24,16 @@ public class AdminPanel extends AbstractPage{
         hoverAddonsDropDown.perform();
         navigateToAddonsManagementPage();
     }
-
     public void hoverToProductPage(){
         WebElement elementOfMenuProducts = hoverMenuProducts();
         Actions hoverMenuProducts = new Actions(DriverProvider.getDriver());
         hoverMenuProducts.moveToElement(elementOfMenuProducts);
         hoverMenuProducts.perform();
     }
-
     public ProductPage navigateToProductPage(){
         productPage.click();
         return new ProductPage();
     }
-
     public void focusBrowserTab() {
         ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
         for(int ii = 0; ii <= 1; ii++) {
@@ -61,15 +58,12 @@ public class AdminPanel extends AbstractPage{
     public void clickButtonAuthorization(){
         buttonAuthorization.click();
     }
-    
     public WebElement hoverAddonsDropDown(){
         return addonsDropDown;
     }
-    
     public void navigateToAddonsManagementPage(){
         addonsManagementPage.click();
     }
-    
     public void clickCloseWarning(){
         closeWarning.click();
     }

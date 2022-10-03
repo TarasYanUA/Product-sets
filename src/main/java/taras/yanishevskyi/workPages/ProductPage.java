@@ -27,19 +27,15 @@ public class ProductPage extends AbstractPage {
         searchFieldForProduct.sendKeys("GoPro");
         searchFieldForProduct.sendKeys(Keys.ENTER);
     }
-    
     public void chooseProductGoPro(){
         productGoPro.click();
     }
-    
     public void clickAtListOfCategories(){
         listOfCategories.click();
     }
-    
     public void clickGearWheelOfProduct(){
         gearwheelOfProduct.click();
     }
-    
     public void clickPreviewButton(){
         previewButton.click();
     }
