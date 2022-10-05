@@ -28,7 +28,7 @@ public class BrowserFactory {
 
     public WebDriver createDriver(){
         WebDriver webDriver;
-        taras.yanishevskyi.BrowserType browserType = taras.yanishevskyi.BrowserType.valueOf(getProperties().getProperty("browser"));
+        BrowserType browserType = BrowserType.valueOf(getProperties().getProperty("browser"));
         switch (browserType) {
             case CHROME:
                 System.setProperty(Constants.CHROME_DRIVER_PROPERTY, Constants.CHROME_DRIVER_PATH);
