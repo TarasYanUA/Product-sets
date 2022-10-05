@@ -12,7 +12,7 @@ import taras.yanishevskyi.workPages.ProductPage;
 import java.time.Duration;
 import java.util.List;
 
-public class CreateSetForOneProduct extends TestRunner{
+public class CreateSetForOneProductTest extends TestRunner{
     @Test
     public void createSetForOneProductAndCheckQuantityOfProducts(){
         AdminPanel adminPanel = new AdminPanel();

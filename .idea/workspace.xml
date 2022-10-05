@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Test is ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/BrowserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/BrowserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProductTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +34,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Motivation_block/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Idea Projects/Product-sets/pom.xml"
   }
-}</component>
-  <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
+}]]></component>
+  <component name="RunManager" selected="TestNG.CreateSetForOneProductTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
       <module name="Product-sets" />
@@ -55,10 +55,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateSetForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateSetForOneProductTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Product-sets" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProduct" />
+      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProductTest" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -66,10 +66,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateSetForOneProduct.createSeveralSetsForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateSetForOneProductTest.createSeveralSetsForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Product-sets" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProduct" />
+      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProductTest" />
       <option name="METHOD_NAME" value="createSeveralSetsForOneProduct" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -80,8 +80,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CreateSetForOneProduct" />
-        <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
+        <item itemvalue="TestNG.CreateSetForOneProductTest" />
+        <item itemvalue="TestNG.CreateSetForOneProductTest.createSeveralSetsForOneProduct" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -137,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664972550255</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Test is ready!">
+      <created>1664975237769</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664975237769</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
