@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Creating a base.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/CheckoutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/AdminPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/DisplayElementForSpecifiedCategoriesOnlyTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Test1.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,19 +32,21 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FcvADQMu7KI7t3gTxY58xXlImJ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Idea Projects/Motivation_block/pom.xml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Motivation_block/pom.xml&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
       <module name="Product-sets" />
@@ -53,8 +60,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CreateSetForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Product-sets" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProduct" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CreateSetForOneProduct.createSeveralSetsForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Product-sets" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProduct" />
+      <option name="METHOD_NAME" value="createSeveralSetsForOneProduct" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.CreateSetForOneProduct" />
+        <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -96,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664809236293</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Creating a base.">
+      <created>1664809346941</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664809346941</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
