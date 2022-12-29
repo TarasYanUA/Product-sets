@@ -17,7 +17,7 @@ public class ProductPage extends AbstractPage {
     private WebElement listOfCategories;
     @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
     private WebElement gearwheelOfProduct;
-    @FindBy(xpath = "//a[contains(@href, '2010-tour-staff-bag-10')][@id=\"187\"]")
+    @FindBy(xpath = "//a[contains(@href, 'preview')][@id=\"187\"]")
     private WebElement previewButton;
     @FindBy(xpath = "//a[@class=\"products-list__image--link\"][contains(@href, 'product_id=187')]")
     private WebElement productTourStaffBag;
@@ -45,7 +45,7 @@ public class ProductPage extends AbstractPage {
     private WebElement buttonAddProductsAndClose;
     @FindBy(xpath = "//a[@class='btn btn-primary cm-submit btn-primary cm-product-save-buttons']")
     private WebElement buttonSaveOnEditProductPage;
-    @FindBy(xpath = "//input[@placeholder='Select products']")
+    @FindBy(css = "div[class='sol-inner-container'] div")
     private WebElement fieldSelectProducts;
     @FindBy(className = "sol-select-all")
     private WebElement buttonSelectAllProductsForSet;
@@ -55,6 +55,10 @@ public class ProductPage extends AbstractPage {
     private WebElement buttonAddToCart;
     @FindBy(css = ".ty-btn.ty-btn__primary.cm-notification-close")
     private WebElement checkoutPage;
+    @FindBy(css = "ul[class='ab__ps-list'] i[class='ut2-icon ut2-icon-baseline-visibility']")
+    private WebElement buttonQuickviewAtSelectedProduct;
+    @FindBy(css = "div.object-container button[id*='button_cart_ajax'] span")
+    private WebElement buttonAddToCart_QuickView;
     
     public void clickAndTypeToSearchField(){
         searchFieldForProduct.click();
@@ -131,4 +135,6 @@ public class ProductPage extends AbstractPage {
     public void clickButtonAddToCart(){
         buttonAddToCart.click();
     }
+    public void clickButtonQuickviewAtSelectedProduct(){buttonQuickviewAtSelectedProduct.click();}
+    public void clickButtonAddToCart_QuickView(){buttonAddToCart_QuickView.click();}
 }

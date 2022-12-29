@@ -5,7 +5,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.yanishevskyi.AbstractPage;
 import taras.yanishevskyi.DriverProvider;
-import java.util.ArrayList;
 
 public class AdminPanel extends AbstractPage{
     public AdminPanel(){
@@ -25,19 +24,34 @@ public class AdminPanel extends AbstractPage{
         hoverMenuProducts.moveToElement(elementOfMenuProducts);
         hoverMenuProducts.perform();
     }
+    public void navigateToAppearanceSettingsOfCsCart(){
+        WebElement mainRightNavBar = hoverSettingsOfCsCart();
+        Actions hoverSettingsOfCsCart = new Actions(DriverProvider.getDriver());
+        hoverSettingsOfCsCart.moveToElement(mainRightNavBar);
+        hoverSettingsOfCsCart.perform();
+        clickAppearanceSettingsOfCsCart();
+    }
     public ProductPage navigateToProductPage(){
         productPage.click();
         return new ProductPage();
     }
-    public void focusBrowserTab() {
-        ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
-        for(int ii = 0; ii <= 1; ii++) {
-            DriverProvider.getDriver().switchTo().window(tabs.get(ii).toString());
-        }
-    }
 
     @FindBy(css = ".btn.btn-primary")
     private WebElement buttonAuthorization;
+    @FindBy(css = "#bp_off_bottom_panel")
+    private WebElement bottomAdminPanel;
+
+    //Настройки CS-Cart
+    @FindBy(css = "#mainrightnavbar")
+    private WebElement settingsOfCsCart;
+    @FindBy(css = "#elm_menu_settings_Appearance")
+    private WebElement appearanceSettingsOfCsCart;
+    @FindBy(css = "input[id*='field___enable_quick_view']")
+    public WebElement settingQuickView;
+    @FindBy(css = ".btn.btn-primary.cm-submit")
+    private WebElement saveButtonOfSettings;
+
+
     @FindBy(xpath = "(//a[@class=\"dropdown-toggle addons\"])[1]")
     private WebElement addonsDropDown;
     @FindBy(id = "elm_menu_addons_manage_addons")
@@ -53,6 +67,19 @@ public class AdminPanel extends AbstractPage{
     public void clickButtonAuthorization(){
         buttonAuthorization.click();
     }
+    public void closeBottomAdminPanel(){
+        bottomAdminPanel.click();
+    }
+    public WebElement hoverSettingsOfCsCart(){
+        return settingsOfCsCart;
+    }
+    public void clickAppearanceSettingsOfCsCart(){
+        appearanceSettingsOfCsCart.click();
+    }
+    public void clickSaveButtonOfSettings(){
+        saveButtonOfSettings.click();
+    }
+
     public WebElement hoverAddonsDropDown(){
         return addonsDropDown;
     }

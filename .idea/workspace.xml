@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Test is ready!">
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Little commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/AdminPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +44,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/Product-sets/pom.xml&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
   }
 }</component>
-  <component name="RunManager" selected="TestNG.CreateSetForOneProductTest">
+  <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
       <module name="Product-sets" />
@@ -54,10 +61,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateSetForOneProductTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateSetForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Product-sets" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProductTest" />
+      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProduct" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -65,10 +72,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CreateSetForOneProductTest.createSeveralSetsForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="CreateSetForOneProduct.createSeveralSetsForOneProduct" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Product-sets" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProductTest" />
+      <option name="MAIN_CLASS_NAME" value="CreateSetForOneProduct" />
       <option name="METHOD_NAME" value="createSeveralSetsForOneProduct" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
@@ -79,9 +86,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CreateSetForOneProductTest" />
-        <item itemvalue="TestNG.CreateSetForOneProductTest.createSeveralSetsForOneProduct" />
+        <item itemvalue="TestNG.CreateSetForOneProduct" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
       </list>
     </recent_temporary>
   </component>
@@ -150,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664978680989</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Little commit.">
+      <created>1669889390224</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1669889390224</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -167,6 +181,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Creating a base." />
     <MESSAGE value="Test is ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test is ready!" />
+    <MESSAGE value="Little commit." />
+    <option name="LAST_COMMIT_MESSAGE" value="Little commit." />
   </component>
 </project>
