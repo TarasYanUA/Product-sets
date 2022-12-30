@@ -12,6 +12,9 @@ import taras.yanishevskyi.workPages.ProductPage;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
+
+import static java.lang.Integer.valueOf;
 import static taras.yanishevskyi.DriverProvider.getDriver;
 
 /*
@@ -96,14 +99,9 @@ public class CreateSetForOneProduct extends TestRunner{
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".object-container")));
         productPage.clickButtonAddToCart_QuickView();
         makePause();
-
-
-        //Здесь нужно доработать и превратить Стринг в инт!!!!!!!!!!!!!!!!!!!
-
         //Проверяем, что товар добавлен в корзину
-        String actualCartValue = DriverProvider.getDriver().findElement(By.cssSelector(".ty-minicart-count")).getText();
-        String expectedCartValue = "1";
-        Assert.assertEquals(actualCartValue, expectedCartValue, "The product has not been added to the cart!");
+        int actualCartValue = valueOf(DriverProvider.getDriver().findElement(By.cssSelector(".ty-minicart-count")).getText());
+        Assert.assertTrue(actualCartValue >= 1, "The product has not been added to the cart!");
 
         //Выключаем товар из второй группы и проверяем, что группа без товаров не отображается на витрине.
         focusBrowserTab(0);
@@ -114,7 +112,9 @@ public class CreateSetForOneProduct extends TestRunner{
         DriverProvider.getDriver().navigate().refresh();
         productPage.clickFieldSelectProducts();
         //Проверяем, что в комплекте отсутствует группа "Мячи для гольфа"
-        Assert.assertFalse(DriverProvider.getDriver().findElement(By.xpath("//div[text()='Мячи для гольфа']")).isDisplayed());
+        Assert.assertTrue(isAbsent(By.xpath("//div[text()='Мячи для гольфа']")));
+
+
 
 
         productPage.clickButtonAddToCart();
@@ -147,5 +147,13 @@ public class CreateSetForOneProduct extends TestRunner{
         int expectedQuantity = 6;
         int actualQuantity = listOfProductsQuantity.size();
         Assert.assertEquals(actualQuantity, expectedQuantity, "There is a wrong number of products at the order!");
+    }
+
+    public boolean isAbsent(By by){
+        try {
+            return DriverProvider.getDriver().findElement(by).isDisplayed();
+        } catch (NoSuchElementException e) {
+            return false;
+        }
     }
 }

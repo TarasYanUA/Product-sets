@@ -59,7 +59,7 @@ public class ProductPage extends AbstractPage {
     private WebElement buttonQuickviewAtSelectedProduct;
     @FindBy(css = "div.object-container button[id*='button_cart_ajax'] span")
     private WebElement buttonAddToCart_QuickView;
-    @FindBy(css = "a[href$='id=188']")
+    @FindBy(css = "div.table-responsive-wrapper a[href$='id=188']")
     private WebElement productWilsonStaff;
     @FindBy(css = "input#elm_product_status_0_d")
     private WebElement switcherDisable;
