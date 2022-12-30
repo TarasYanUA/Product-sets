@@ -2,6 +2,7 @@ package taras.yanishevskyi.workPages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.Select;
 import taras.yanishevskyi.AbstractPage;
 import java.util.List;
 
@@ -26,6 +27,10 @@ public class CheckoutPage extends AbstractPage {
     private WebElement buttonOrderDetails;
     @FindBy(css = ".ty-float-left.ty-orders-detail__table-image")
     private List<WebElement> quantityOfProducts;
+    @FindBy(css = "select#litecheckout_country")
+    private WebElement countryField;
+    @FindBy(css = "input#litecheckout_city_state")
+    public WebElement cityField;
 
 
     public void checkAgreementTermsAndConditions(){
@@ -57,5 +62,19 @@ public class CheckoutPage extends AbstractPage {
     }
     public List<WebElement> countQuantityOfProducts(){
         return quantityOfProducts;
+    }
+    public void clickCountryField(){countryField.click();}
+
+    public Select getCountryField(){
+        return new Select(countryField);
+    }
+    public void selectCountryField(String value){
+        getCountryField().selectByValue(value);
+    }
+
+    public void clickAndTypeCityField(String value){
+        cityField.click();
+        cityField.click();
+        cityField.sendKeys(value);
     }
 }
