@@ -9,7 +9,7 @@ public class CheckoutPage extends AbstractPage {
     @FindBy(xpath = "//input[contains(@id, 'id_accept_terms')]")
     private WebElement agreementTermsAndConditions;
     @FindBy(xpath = "//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")
-    private WebElement agreementPersonalData;
+    public WebElement agreementPersonalData;
     @FindBy(css = ".litecheckout__submit-btn")
     private WebElement buttonPlaceOrder;
     @FindBy(css = ".cm-dialog-opener.cm-dialog-auto-size.ty-btn")
@@ -18,7 +18,7 @@ public class CheckoutPage extends AbstractPage {
     private WebElement signInAtPopup;
     @FindBy(xpath = "//label[@class='b--pay-way__opted']//div[@class='b--pay-way__opted__text']")
     private WebElement paymentMethod;
-    @FindBy(xpath = "//div[contains(text(), 'Phone ordering')]")
+    @FindBy(css = "#payments_2")
     private WebElement paymentMethod_PhoneOrdering;
     @FindBy(id = "bp_off_bottom_panel")
     private WebElement hideAdminToolbar;

@@ -111,22 +111,24 @@ public class CreateSetForOneProduct extends TestRunner{
         focusBrowserTab(1);
         DriverProvider.getDriver().navigate().refresh();
         productPage.clickFieldSelectProducts();
-        //Проверяем, что в комплекте отсутствует группа "Мячи для гольфа"
-        Assert.assertTrue(isAbsent(By.xpath("//div[text()='Мячи для гольфа']")));
-
-
-
-
+        //Проверяем, что в комплекте присутствует только одна группа
+        int sizeOfGroups = DriverProvider.getDriver().findElements(By.cssSelector(".sol-optiongroup-label")).size();
+        Assert.assertTrue(sizeOfGroups < 2);
+        productPage.clickButtonCloseForSet();
         productPage.clickButtonAddToCart();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close.close")));
         CheckoutPage checkoutPage = productPage.navigateToCheckoutPage();   //Находимся на странице чекаута
 
-        checkoutPage.clickSignIn();
+/*        checkoutPage.clickSignIn();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ui-dialog-titlebar.ui-corner-all")));
         checkoutPage.clickSignInAtPopup();
-        checkoutPage.clickHideAdminToolbar();
+        checkoutPage.clickHideAdminToolbar();*/
+
+        //Добавить шаги: страна -- город -- Ентер
+
+
         checkoutPage.clickPaymentMethod();
         checkoutPage.choosePaymentMethod_PhoneOrdering();
         makePause();
