@@ -13,8 +13,6 @@ import taras.yanishevskyi.workPages.ProductPage;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-import java.util.NoSuchElementException;
-
 import static java.lang.Integer.valueOf;
 import static taras.yanishevskyi.DriverProvider.getDriver;
 
@@ -23,7 +21,7 @@ import static taras.yanishevskyi.DriverProvider.getDriver;
 - Проверяем наличие кнопок "Быстрый просмотр" и "Удалить" у выбранных товаров.
 - Покупаем выбранный товар из комплекта через кнопку "Быстрый просмотр" и проверяем, что в Корзину товар добавился.
 - Выключаем товар из второй группы и проверяем, что группа без товаров не отображается на витрине.
-- Совершаем покупку всего комплекта и проверяем успешность заказа.
+- Совершаем покупку всего комплекта и проверяем наличие товаров в заказе.
 */
 
 public class CreateSetForOneProduct extends TestRunner{
@@ -152,13 +150,5 @@ public class CreateSetForOneProduct extends TestRunner{
         List<WebElement> listOfProductsQuantity = checkoutPage.countQuantityOfProducts();
         int actualQuantity = listOfProductsQuantity.size();
         Assert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");
-    }
-
-    public boolean isAbsent(By by){
-        try {
-            return DriverProvider.getDriver().findElement(by).isDisplayed();
-        } catch (NoSuchElementException e) {
-            return false;
-        }
     }
 }
