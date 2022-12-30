@@ -17,9 +17,9 @@ import static taras.yanishevskyi.DriverProvider.getDriver;
 /*
 - Работаем с категорией "Гольф", где для товара создаём комплект товаров из двух групп.
 - Проверяем наличие кнопок "Быстрый просмотр" и "Удалить" у выбранных товаров.
-- Покупаем выбранный товар из комплекта через кнопку "Быстрый просмотр" и проверяем, что в Корзине товар добавился.
+- Покупаем выбранный товар из комплекта через кнопку "Быстрый просмотр" и проверяем, что в Корзину товар добавился.
 - Выключаем товар из второй группы и проверяем, что группа без товаров не отображается на витрине.
-
+- Совершаем покупку всего комплекта и проверяем успешность заказа.
 */
 
 public class CreateSetForOneProduct extends TestRunner{
@@ -96,10 +96,25 @@ public class CreateSetForOneProduct extends TestRunner{
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".object-container")));
         productPage.clickButtonAddToCart_QuickView();
         makePause();
+
+
+        //Здесь нужно доработать и превратить Стринг в инт!!!!!!!!!!!!!!!!!!!
+
         //Проверяем, что товар добавлен в корзину
+        String actualCartValue = DriverProvider.getDriver().findElement(By.cssSelector(".ty-minicart-count")).getText();
+        String expectedCartValue = "1";
+        Assert.assertEquals(actualCartValue, expectedCartValue, "The product has not been added to the cart!");
 
-
-
+        //Выключаем товар из второй группы и проверяем, что группа без товаров не отображается на витрине.
+        focusBrowserTab(0);
+        productPage.clickProductWilsonStaff();
+        productPage.clickSwitcherDisable();
+        productPage.clickButtonSaveOnEditProductPage(); //Выключили товар "мячи"
+        focusBrowserTab(1);
+        DriverProvider.getDriver().navigate().refresh();
+        productPage.clickFieldSelectProducts();
+        //Проверяем, что в комплекте отсутствует группа "Мячи для гольфа"
+        Assert.assertFalse(DriverProvider.getDriver().findElement(By.xpath("//div[text()='Мячи для гольфа']")).isDisplayed());
 
 
         productPage.clickButtonAddToCart();

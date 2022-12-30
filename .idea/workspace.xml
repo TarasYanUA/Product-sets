@@ -6,13 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Little commit.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/AdminPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/AdminPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/workPages/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProductTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

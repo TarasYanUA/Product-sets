@@ -59,6 +59,10 @@ public class ProductPage extends AbstractPage {
     private WebElement buttonQuickviewAtSelectedProduct;
     @FindBy(css = "div.object-container button[id*='button_cart_ajax'] span")
     private WebElement buttonAddToCart_QuickView;
+    @FindBy(css = "a[href$='id=188']")
+    private WebElement productWilsonStaff;
+    @FindBy(css = "input#elm_product_status_0_d")
+    private WebElement switcherDisable;
     
     public void clickAndTypeToSearchField(){
         searchFieldForProduct.click();
@@ -137,4 +141,6 @@ public class ProductPage extends AbstractPage {
     }
     public void clickButtonQuickviewAtSelectedProduct(){buttonQuickviewAtSelectedProduct.click();}
     public void clickButtonAddToCart_QuickView(){buttonAddToCart_QuickView.click();}
+    public void clickProductWilsonStaff(){productWilsonStaff.click();}
+    public void clickSwitcherDisable(){switcherDisable.click();}
 }
