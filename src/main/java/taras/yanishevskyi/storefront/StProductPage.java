@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class StProductPage {
+    public StProductPage() {super();}
     @FindBy(css = ".ty-btn.ty-btn__primary.cm-notification-close")
     private WebElement checkoutPage;
     @FindBy(css = "div[class='sol-inner-container'] div")

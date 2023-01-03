@@ -38,7 +38,6 @@ public class CreateSetForOneProduct extends TestRunner{
         admHomePage.clickSaveButtonOfSettings();
 
         //Работаем с товаром
-        admHomePage.hoverToProductPage();
         AdmProductPage admProductPage = admHomePage.navigateToProductPage();
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();

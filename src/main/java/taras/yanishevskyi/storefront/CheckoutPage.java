@@ -7,6 +7,7 @@ import taras.yanishevskyi.constants.AbstractPage;
 import java.util.List;
 
 public class CheckoutPage extends AbstractPage {
+    public CheckoutPage() {super();}
     @FindBy(xpath = "//input[contains(@id, 'id_accept_terms')]")
     private WebElement agreementTermsAndConditions;
     @FindBy(xpath = "//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")

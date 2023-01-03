@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Split by packages.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Second test-case has been started!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmCustomersPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,13 +41,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Idea Projects/UniTheme2/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Idea Projects/UniTheme2/pom.xml"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="TestNG.VendorCreatesProductSet">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
@@ -237,7 +241,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672734940666</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Second test-case has been started!">
+      <created>1672743806645</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1672743806645</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,6 +263,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Creating a base." />
     <MESSAGE value="Test is ready!" />
     <MESSAGE value="Little commit." />
@@ -259,6 +271,7 @@
     <MESSAGE value="Steps on the checkout page." />
     <MESSAGE value="Test-case is totally ready for MV." />
     <MESSAGE value="Split by packages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Split by packages." />
+    <MESSAGE value="Second test-case has been started!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second test-case has been started!" />
   </component>
 </project>

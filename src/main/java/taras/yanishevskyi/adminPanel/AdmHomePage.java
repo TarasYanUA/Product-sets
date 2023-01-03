@@ -15,21 +15,38 @@ public class AdmHomePage extends AbstractPage{
     public WebElement hoverAddonsDropDown(){
         return addonsDropDown;
     }
-    public void clickAddonsManagementPage(){
-        addonsManagementPage.click();
-    }
     public void navigateToAddonsManagementPage() {
         WebElement elementOfAddonsDropDown = hoverAddonsDropDown();
         Actions hoverAddonsDropDown = new Actions(DriverProvider.getDriver());
         hoverAddonsDropDown.moveToElement(elementOfAddonsDropDown);
         hoverAddonsDropDown.perform();
-        clickAddonsManagementPage();
+        addonsManagementPage.click();
     }
-    public void hoverToProductPage(){
+    public WebElement hoverMenuProducts(){
+        return menuProducts;
+    }
+    public AdmProductPage navigateToProductPage(){
         WebElement elementOfMenuProducts = hoverMenuProducts();
         Actions hoverMenuProducts = new Actions(DriverProvider.getDriver());
         hoverMenuProducts.moveToElement(elementOfMenuProducts);
         hoverMenuProducts.perform();
+        productPage.click();
+        return new AdmProductPage();
+    }
+    public WebElement hoverMenuCustomers(){
+        return menuCustomers;
+    }
+    public AdmCustomersPage navigateToCustomersPage(){
+        WebElement elementOfMenuCustomers = hoverMenuCustomers();
+        Actions hoverMenuCustomers = new Actions(DriverProvider.getDriver());
+        hoverMenuCustomers.moveToElement(elementOfMenuCustomers);
+        hoverMenuCustomers.perform();
+        customersPage.click();
+        return new AdmCustomersPage();
+    }
+
+    public WebElement hoverSettingsOfCsCart(){
+        return settingsOfCsCart;
     }
     public void navigateToAppearanceSettingsOfCsCart(){
         WebElement mainRightNavBar = hoverSettingsOfCsCart();
@@ -37,10 +54,6 @@ public class AdmHomePage extends AbstractPage{
         hoverSettingsOfCsCart.moveToElement(mainRightNavBar);
         hoverSettingsOfCsCart.perform();
         clickAppearanceSettingsOfCsCart();
-    }
-    public AdmProductPage navigateToProductPage(){
-        productPage.click();
-        return new AdmProductPage();
     }
 
     @FindBy(css = ".btn.btn-primary")
@@ -64,12 +77,16 @@ public class AdmHomePage extends AbstractPage{
     private WebElement addonsManagementPage;
     @FindBy(css = "#elm_addon")
     private WebElement searchFieldAtManagementPage;
-    @FindBy(css = "tr#addon_master_products td:nth-of-type(8) div div:nth-of-type(2) a")
+    @FindBy(css = "td.nowrap.right a[href*='addon=master_products']")
     public WebElement buttonInstallAddon;
-    @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
+    @FindBy(xpath = "//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#products']")
     private WebElement menuProducts;
     @FindBy(xpath = "//span[text()='Товары']")
     private WebElement productPage;
+    @FindBy(xpath = "//li[contains(@class, 'dropdown nav__header-main-menu-item')]//a[@href='#customers']")
+    private WebElement menuCustomers;
+    @FindBy(xpath = "//span[text()='Администраторы продавца']")
+    private WebElement customersPage;
 
 
     
@@ -78,9 +95,6 @@ public class AdmHomePage extends AbstractPage{
     }
     public void closeBottomAdminPanel(){
         bottomAdminPanel.click();
-    }
-    public WebElement hoverSettingsOfCsCart(){
-        return settingsOfCsCart;
     }
     public void clickAppearanceSettingsOfCsCart(){
         appearanceSettingsOfCsCart.click();
@@ -96,8 +110,5 @@ public class AdmHomePage extends AbstractPage{
     }
     public void clickButtonInstallAddon(){
         buttonInstallAddon.click();
-    }
-    public WebElement hoverMenuProducts(){
-        return menuProducts;
     }
 }

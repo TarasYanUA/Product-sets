@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import taras.yanishevskyi.constants.AbstractPage;
 
 public class AdmProductPage extends AbstractPage {
+    public AdmProductPage() {super();}
     @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
     private WebElement gearwheelOfProduct;
     @FindBy(xpath = "//a[contains(@href, 'preview')][@id=\"187\"]")
@@ -48,6 +49,8 @@ public class AdmProductPage extends AbstractPage {
     private WebElement productVendor;
     @FindBy(css = "a[title='Все продавцы (общий товар)']")
     private WebElement productBelongsToAllVendors;
+    @FindBy(css = ".cs-icon.icon-thumbs-up")
+    private WebElement iconThumbUp;
 
 
     public void clickGearWheelOfProduct(){
@@ -112,4 +115,5 @@ public class AdmProductPage extends AbstractPage {
     public void selectProductBelongsToAllVendors(){
         productBelongsToAllVendors.click();
     }
+    public void clickIconThumbUp(){iconThumbUp.click();}
 }
