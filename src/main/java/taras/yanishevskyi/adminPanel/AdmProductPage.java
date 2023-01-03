@@ -1,5 +1,6 @@
 package taras.yanishevskyi.adminPanel;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import taras.yanishevskyi.constants.AbstractPage;
@@ -39,6 +40,14 @@ public class AdmProductPage extends AbstractPage {
     private WebElement productWilsonStaff;
     @FindBy(css = "input#elm_product_status_0_d")
     private WebElement switcherDisable;
+    @FindBy(css = ".sidebar-field input")
+    private WebElement searchFieldAtProductPage;
+    @FindBy(css = ".products-list__image--link img")
+    private WebElement productInSearchList;
+    @FindBy(css = "#sw_product_data_company_id_selector_wrap_")
+    private WebElement productVendor;
+    @FindBy(css = "a[title='Все продавцы (общий товар)']")
+    private WebElement productBelongsToAllVendors;
 
 
     public void clickGearWheelOfProduct(){
@@ -89,4 +98,18 @@ public class AdmProductPage extends AbstractPage {
     }
     public void clickProductWilsonStaff(){productWilsonStaff.click();}
     public void clickSwitcherDisable(){switcherDisable.click();}
+    public void clickAndTypeSearchFieldAtProductPage(String value){
+        searchFieldAtProductPage.click();
+        searchFieldAtProductPage.sendKeys(value);
+        searchFieldAtProductPage.sendKeys(Keys.ENTER);
+    }
+    public void clickProductInSearchList(){
+        productInSearchList.click();
+    }
+    public void clickProductVendor(){
+        productVendor.click();
+    }
+    public void selectProductBelongsToAllVendors(){
+        productBelongsToAllVendors.click();
+    }
 }

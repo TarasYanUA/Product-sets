@@ -146,5 +146,6 @@ public class CreateSetForOneProduct extends TestRunner{
         int actualQuantity = listOfProductsQuantity.size();
         Assert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");
         //Эту проверку можно заменить на чёткое количество товаров в заказе после исправления ошибки https://abteam.planfix.com/task/37774
+        takeScreenShot("120 Order has been purchased successfully");
     }
 }

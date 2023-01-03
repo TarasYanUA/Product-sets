@@ -1,5 +1,6 @@
 package taras.yanishevskyi.adminPanel;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -11,12 +12,18 @@ public class AdmHomePage extends AbstractPage{
         super();
     }
 
-    public void navigateToAddonsPage(AdmHomePage admHomePage) {
+    public WebElement hoverAddonsDropDown(){
+        return addonsDropDown;
+    }
+    public void clickAddonsManagementPage(){
+        addonsManagementPage.click();
+    }
+    public void navigateToAddonsManagementPage() {
         WebElement elementOfAddonsDropDown = hoverAddonsDropDown();
         Actions hoverAddonsDropDown = new Actions(DriverProvider.getDriver());
         hoverAddonsDropDown.moveToElement(elementOfAddonsDropDown);
         hoverAddonsDropDown.perform();
-        navigateToAddonsManagementPage();
+        clickAddonsManagementPage();
     }
     public void hoverToProductPage(){
         WebElement elementOfMenuProducts = hoverMenuProducts();
@@ -55,10 +62,15 @@ public class AdmHomePage extends AbstractPage{
     private WebElement addonsDropDown;
     @FindBy(id = "elm_menu_addons_manage_addons")
     private WebElement addonsManagementPage;
+    @FindBy(css = "#elm_addon")
+    private WebElement searchFieldAtManagementPage;
+    @FindBy(css = "tr#addon_master_products td:nth-of-type(8) div div:nth-of-type(2) a")
+    public WebElement buttonInstallAddon;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
     @FindBy(xpath = "//span[text()='Товары']")
     private WebElement productPage;
+
 
     
     public void clickButtonAuthorization(){
@@ -77,11 +89,13 @@ public class AdmHomePage extends AbstractPage{
         saveButtonOfSettings.click();
     }
 
-    public WebElement hoverAddonsDropDown(){
-        return addonsDropDown;
+    public void clickAndTypeSearchFieldAtManagementPage(String value){
+        searchFieldAtManagementPage.click();
+        searchFieldAtManagementPage.sendKeys(value);
+        searchFieldAtManagementPage.sendKeys(Keys.ENTER);
     }
-    public void navigateToAddonsManagementPage(){
-        addonsManagementPage.click();
+    public void clickButtonInstallAddon(){
+        buttonInstallAddon.click();
     }
     public WebElement hoverMenuProducts(){
         return menuProducts;

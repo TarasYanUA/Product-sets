@@ -58,7 +58,7 @@ public class TestRunner {
 
     public void makePause(){
         try {
-            Thread.sleep(1500);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
