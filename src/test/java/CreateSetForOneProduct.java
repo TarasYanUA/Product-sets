@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import taras.yanishevskyi.DriverProvider;
+import taras.yanishevskyi.constants.DriverProvider;
 import taras.yanishevskyi.adminPanel.AdmHomePage;
 import taras.yanishevskyi.storefront.CheckoutPage;
 import taras.yanishevskyi.adminPanel.AdmProductPage;
@@ -14,7 +14,7 @@ import taras.yanishevskyi.storefront.StProductPage;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-import static taras.yanishevskyi.DriverProvider.getDriver;
+import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 
 /*
 - Работаем с категорией "Гольф", где для товара создаём комплект товаров из двух групп.

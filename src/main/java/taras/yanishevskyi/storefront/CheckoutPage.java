@@ -3,7 +3,7 @@ package taras.yanishevskyi.storefront;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import taras.yanishevskyi.AbstractPage;
+import taras.yanishevskyi.constants.AbstractPage;
 import java.util.List;
 
 public class CheckoutPage extends AbstractPage {

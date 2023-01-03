@@ -1,4 +1,4 @@
-package taras.yanishevskyi;
+package taras.yanishevskyi.constants;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

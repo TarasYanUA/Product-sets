@@ -3,8 +3,8 @@ package taras.yanishevskyi.adminPanel;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import taras.yanishevskyi.AbstractPage;
-import taras.yanishevskyi.DriverProvider;
+import taras.yanishevskyi.constants.AbstractPage;
+import taras.yanishevskyi.constants.DriverProvider;
 
 public class AdmHomePage extends AbstractPage{
     public AdmHomePage(){

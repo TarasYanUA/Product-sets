@@ -53,7 +53,7 @@
       <module name="Product-sets" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="taras.yanishevskyi.*" />
+          <option name="PATTERN" value="taras.yanishevskyi.constants.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

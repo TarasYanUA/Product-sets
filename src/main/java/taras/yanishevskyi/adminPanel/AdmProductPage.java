@@ -2,7 +2,7 @@ package taras.yanishevskyi.adminPanel;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import taras.yanishevskyi.AbstractPage;
+import taras.yanishevskyi.constants.AbstractPage;
 
 public class AdmProductPage extends AbstractPage {
     @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
