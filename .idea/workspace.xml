@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Second test-case has been started!">
-      <change afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmCustomersPage.java" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Second test-case: 4/7 are ready!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -248,7 +242,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672743806645</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Second test-case: 4/7 are ready!">
+      <created>1672760642629</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1672760642629</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -272,6 +273,7 @@
     <MESSAGE value="Test-case is totally ready for MV." />
     <MESSAGE value="Split by packages." />
     <MESSAGE value="Second test-case has been started!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second test-case has been started!" />
+    <MESSAGE value="Second test-case: 4/7 are ready!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second test-case: 4/7 are ready!" />
   </component>
 </project>

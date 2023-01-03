@@ -22,17 +22,15 @@ public class VendorCreatesProductSet extends TestRunner{
     public void checkVendorCanCreateProductSet(){
         //Устанавливаем модуль "Общие товары для продавцов"
         AdmHomePage admHomePage = new AdmHomePage();
-        /*admHomePage.navigateToAddonsManagementPage();
+        admHomePage.navigateToAddonsManagementPage();
         if(DriverProvider.getDriver().findElements(By.cssSelector(".alert")).size()>0){
             DriverProvider.getDriver().findElement(By.cssSelector(".close.cm-notification-close")).click();
         }   //Выключаем сообщение о предупредлении, если оно появилось
         admHomePage.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
-        if (admHomePage.buttonInstallAddon.isEnabled()) {
         admHomePage.clickButtonInstallAddon();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5))).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//li[@class='dropdown nav__header-main-menu-item ']")));
         DriverProvider.getDriver().navigate().refresh();
-        }*/
         //Работаем со страницей редактирования товара
         AdmProductPage admProductPage = admHomePage.navigateToProductPage();
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
@@ -44,6 +42,7 @@ public class VendorCreatesProductSet extends TestRunner{
         admCustomersPage.navigateToGearwheelOfSimtechVendor();
         admCustomersPage.clickActAsUser();
         focusBrowserTab(1);
+
         //Работаем как продавец
         admCustomersPage.clickVendorProductMenu();
         admCustomersPage.clickVendorProductPage();
@@ -71,5 +70,17 @@ public class VendorCreatesProductSet extends TestRunner{
         }   //Выключаем сообщение о предупредлении, если оно появилось
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
         admProductPage.clickIconThumbUp();
+        admProductPage.clickProductInSearchList();
+        admProductPage.clickGearWheelOfProduct();
+        admProductPage.clickPreviewButton();
+        focusBrowserTab(1);
+
+        //Работаем с витриной
+        //Проверяем, что мы на странице продавца Simtech
+        String actualPage = DriverProvider.getDriver().findElement(By.cssSelector("div.ut2-vendor-block__name a")).getText();
+        String expectedPage = "Simtech";
+        Assert.assertEquals(actualPage.toLowerCase(), expectedPage.toLowerCase(), "It is not a vendor page!");
+        //На странице продавца проверяем, что комплект присутствует
+
     }
 }
