@@ -1,4 +1,4 @@
-package taras.yanishevskyi.workPages;
+package taras.yanishevskyi.storefront;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,10 +13,6 @@ public class CheckoutPage extends AbstractPage {
     public WebElement agreementPersonalData;
     @FindBy(css = ".litecheckout__submit-btn")
     private WebElement buttonPlaceOrder;
-    @FindBy(css = ".cm-dialog-opener.cm-dialog-auto-size.ty-btn")
-    private WebElement signIn;
-    @FindBy(css = ".ty-btn__login")
-    private WebElement signInAtPopup;
     @FindBy(xpath = "//label[@class='b--pay-way__opted']//div[@class='b--pay-way__opted__text']")
     private WebElement paymentMethod;
     @FindBy(css = "#payments_2")
@@ -41,12 +37,6 @@ public class CheckoutPage extends AbstractPage {
     }
     public void clickButtonPlaceOrder(){
         buttonPlaceOrder.click();
-    }
-    public void clickSignIn(){
-        signIn.click();
-    }
-    public void clickSignInAtPopup(){
-        signInAtPopup.click();
     }
     public void clickPaymentMethod(){
         paymentMethod.click();

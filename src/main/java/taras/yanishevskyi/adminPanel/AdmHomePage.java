@@ -1,4 +1,4 @@
-package taras.yanishevskyi.workPages;
+package taras.yanishevskyi.adminPanel;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -6,12 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import taras.yanishevskyi.AbstractPage;
 import taras.yanishevskyi.DriverProvider;
 
-public class AdminPanel extends AbstractPage{
-    public AdminPanel(){
+public class AdmHomePage extends AbstractPage{
+    public AdmHomePage(){
         super();
     }
 
-    public void navigateToAddonsPage(AdminPanel adminPanel) {
+    public void navigateToAddonsPage(AdmHomePage admHomePage) {
         WebElement elementOfAddonsDropDown = hoverAddonsDropDown();
         Actions hoverAddonsDropDown = new Actions(DriverProvider.getDriver());
         hoverAddonsDropDown.moveToElement(elementOfAddonsDropDown);
@@ -31,9 +31,9 @@ public class AdminPanel extends AbstractPage{
         hoverSettingsOfCsCart.perform();
         clickAppearanceSettingsOfCsCart();
     }
-    public ProductPage navigateToProductPage(){
+    public AdmProductPage navigateToProductPage(){
         productPage.click();
-        return new ProductPage();
+        return new AdmProductPage();
     }
 
     @FindBy(css = ".btn.btn-primary")
@@ -56,8 +56,6 @@ public class AdminPanel extends AbstractPage{
     private WebElement addonsDropDown;
     @FindBy(id = "elm_menu_addons_manage_addons")
     private WebElement addonsManagementPage;
-    @FindBy(xpath = "//button[@class=\"close cm-notification-close cm-notification-close-ajax\"]")
-    private WebElement closeWarning;
     @FindBy(xpath = "//li[@class='dropdown nav__header-main-menu-item ']//a[@href='#products']")
     private WebElement menuProducts;
     @FindBy(xpath = "//span[text()='Товары']")
@@ -85,9 +83,6 @@ public class AdminPanel extends AbstractPage{
     }
     public void navigateToAddonsManagementPage(){
         addonsManagementPage.click();
-    }
-    public void clickCloseWarning(){
-        closeWarning.click();
     }
     public WebElement hoverMenuProducts(){
         return menuProducts;

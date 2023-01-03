@@ -1,11 +1,10 @@
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 import taras.yanishevskyi.DriverProvider;
-import taras.yanishevskyi.workPages.AdminPanel;
+import taras.yanishevskyi.adminPanel.AdmHomePage;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,9 +30,9 @@ public class TestRunner {
         DriverProvider.getDriver().get(BASIC_URL);
         DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
-        AdminPanel adminPanel = new AdminPanel();
-        adminPanel.clickButtonAuthorization();
-        adminPanel.closeBottomAdminPanel();
+        AdmHomePage admHomePage = new AdmHomePage();
+        admHomePage.clickButtonAuthorization();
+        admHomePage.closeBottomAdminPanel();
     }
 
     @AfterMethod
