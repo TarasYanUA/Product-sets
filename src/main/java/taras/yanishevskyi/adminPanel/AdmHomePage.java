@@ -51,7 +51,6 @@ public class AdmHomePage extends AbstractPage{
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
 
-
     @FindBy(xpath = "(//a[@class=\"dropdown-toggle addons\"])[1]")
     private WebElement addonsDropDown;
     @FindBy(id = "elm_menu_addons_manage_addons")

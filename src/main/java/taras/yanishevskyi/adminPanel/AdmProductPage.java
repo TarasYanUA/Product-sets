@@ -35,13 +35,11 @@ public class AdmProductPage extends AbstractPage {
     private WebElement buttonAddProductsAndClose;
     @FindBy(xpath = "//a[@class='btn btn-primary cm-submit btn-primary cm-product-save-buttons']")
     private WebElement buttonSaveOnEditProductPage;
-
-
-
     @FindBy(css = "div.table-responsive-wrapper a[href$='id=188']")
     private WebElement productWilsonStaff;
     @FindBy(css = "input#elm_product_status_0_d")
     private WebElement switcherDisable;
+
 
     public void clickGearWheelOfProduct(){
         gearwheelOfProduct.click();
