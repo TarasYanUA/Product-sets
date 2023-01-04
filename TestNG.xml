@@ -1,0 +1,8 @@
+<suite name="Product sets">
+    <test name="Create different product sets">
+        <classes>
+            <class name="CreateSetForOneProduct" />
+            <class name="VendorCreatesProductSet" />
+        </classes>
+    </test>
+</suite>
