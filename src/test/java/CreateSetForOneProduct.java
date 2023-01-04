@@ -1,6 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -29,7 +28,6 @@ public class CreateSetForOneProduct extends TestRunner{
     public void createSetForOneProductAndCheckQuantityOfProducts() throws IOException {
         //Включаем Быстрый просмотр
         AdmHomePage admHomePage = new AdmHomePage();
-        StProductPage stProductPage = new StProductPage();
         admHomePage.navigateToAppearanceSettingsOfCsCart();
         WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
@@ -76,6 +74,7 @@ public class CreateSetForOneProduct extends TestRunner{
 
         //Работаем с витриной на странице товара
         focusBrowserTab(1);
+        StProductPage stProductPage = new StProductPage();
         stProductPage.clickFieldSelectProducts();
         stProductPage.clickButtonSelectAllProductsForSet();
         makePause();
@@ -113,6 +112,7 @@ public class CreateSetForOneProduct extends TestRunner{
         //Проверяем, что в комплекте присутствует только одна группа
         int sizeOfGroups = DriverProvider.getDriver().findElements(By.cssSelector(".sol-optiongroup-label")).size();
         Assert.assertTrue(sizeOfGroups < 2);
+        //Покупаем комплект товаров
         stProductPage.clickButtonSelectAllProductsForSet();
         makePause();
         stProductPage.clickButtonCloseForSet();
@@ -123,7 +123,6 @@ public class CreateSetForOneProduct extends TestRunner{
         checkoutPage.clickCountryField();
         checkoutPage.selectCountryField("UA");
         checkoutPage.clickAndTypeCityField("Киев");
-        checkoutPage.cityField.sendKeys(Keys.ENTER);
         makePause();
         checkoutPage.clickPaymentMethod();
         checkoutPage.choosePaymentMethod_PhoneOrdering();
@@ -141,6 +140,7 @@ public class CreateSetForOneProduct extends TestRunner{
                 "Process of placing the order has failed!");
         //Проверяем наличие всех товаров в заказе
         checkoutPage.clickButtonOrderDetails();
+        checkoutPage.scrollToBlockProductInformation();
         List<WebElement> listOfProductsQuantity = checkoutPage.countQuantityOfProducts();
         int actualQuantity = listOfProductsQuantity.size();
         Assert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");

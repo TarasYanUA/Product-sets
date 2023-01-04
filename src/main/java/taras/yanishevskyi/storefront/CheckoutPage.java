@@ -1,9 +1,12 @@
 package taras.yanishevskyi.storefront;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.yanishevskyi.constants.AbstractPage;
+import taras.yanishevskyi.constants.DriverProvider;
 import java.util.List;
 
 public class CheckoutPage extends AbstractPage {
@@ -12,6 +15,8 @@ public class CheckoutPage extends AbstractPage {
     private WebElement agreementTermsAndConditions;
     @FindBy(xpath = "//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")
     public WebElement agreementPersonalData;
+    @FindBy(xpath = "//input[contains(@id, 'product_agreements')]")
+    private WebElement agreementSimtech;
     @FindBy(css = ".litecheckout__submit-btn")
     private WebElement buttonPlaceOrder;
     @FindBy(xpath = "//label[@class='b--pay-way__opted']//div[@class='b--pay-way__opted__text']")
@@ -27,7 +32,9 @@ public class CheckoutPage extends AbstractPage {
     @FindBy(css = "select#litecheckout_country")
     private WebElement countryField;
     @FindBy(css = "input#litecheckout_city_state")
-    public WebElement cityField;
+    private WebElement cityField;
+    @FindBy(xpath = "(//div[@class='ty-float-left ty-orders-detail__table-image'])[4]")
+    private WebElement blockProductInformation;
 
 
     public void checkAgreementTermsAndConditions(){
@@ -36,6 +43,7 @@ public class CheckoutPage extends AbstractPage {
     public void checkAgreementPersonalData(){
         agreementPersonalData.click();
     }
+    public void checkAgreementSimtech(){agreementSimtech.click();}
     public void clickButtonPlaceOrder(){
         buttonPlaceOrder.click();
     }
@@ -65,7 +73,17 @@ public class CheckoutPage extends AbstractPage {
 
     public void clickAndTypeCityField(String value){
         cityField.click();
-        cityField.click();
+        cityField.clear();
         cityField.sendKeys(value);
+        cityField.sendKeys(Keys.ENTER);
+    }
+    public WebElement hoverBlockProductInformation(){
+        return blockProductInformation;
+    }
+    public void scrollToBlockProductInformation(){
+        WebElement elementForScroll = hoverBlockProductInformation();
+        Actions scrollToBlock = new Actions(DriverProvider.getDriver());
+        scrollToBlock.scrollToElement(elementForScroll);
+        scrollToBlock.perform();
     }
 }

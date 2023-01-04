@@ -5,7 +5,6 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import taras.yanishevskyi.constants.DriverProvider;
 import taras.yanishevskyi.adminPanel.AdmHomePage;
-
 import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
@@ -14,10 +13,11 @@ import java.util.Arrays;
 import static taras.yanishevskyi.constants.Constants.BASIC_URL;
 
 /*
-Модуль "Product sets" (Комплекты для товара (Up-Sell)) + тема Юни2(MVRu).
+Модуль "Product sets" (Комплекты для товара (Up-Sell)) + тема Юни2(MVRu) v4.15.2e.
+Актуально для CS-Cart 4.15.2.
 
 Тест можно запустить двумя способами:
-1) Сам тест
+1) Через файл TestNG.xml
 2) Через Surefire отчёт: перейти в "Терминал" и ввести "mvn clean test". После этого в папке "target -> surefire reports"
  открыть файл "index.html" с помощью браузера.
 
