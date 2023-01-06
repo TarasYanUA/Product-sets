@@ -16,11 +16,7 @@ import static taras.yanishevskyi.constants.Constants.BASIC_URL;
 Модуль "Product sets" (Комплекты для товара (Up-Sell)) + тема Юни2(MVRu) v4.15.2e.
 Актуально для CS-Cart 4.15.2.
 
-Тест можно запустить двумя способами:
-1) Через файл TestNG.xml
-2) Через Surefire отчёт: перейти в "Терминал" и ввести "mvn clean test". После этого в папке "target -> surefire reports"
- открыть файл "index.html" с помощью браузера.
-
+Тест можно запустить через файл TestNG.xml
 */
 
 public class TestRunner {
