@@ -1,4 +1,5 @@
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestResult;
@@ -29,13 +30,14 @@ public class TestRunner {
         AdmHomePage admHomePage = new AdmHomePage();
         admHomePage.clickButtonAuthorization();
         admHomePage.closeBottomAdminPanel();
+        DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
     }
 
     @AfterMethod
     public void takeScreenShotOnFailure(ITestResult testResult) throws IOException {
         if (testResult.getStatus() == ITestResult.FAILURE) {
             File scrFile = ((TakesScreenshot)DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(scrFile, new File("errorScreenshots\\" + testResult.getName() + "-"
+            FileUtils.copyFile(scrFile, new File("myErrorScreenshots\\" + testResult.getName() + "-"
                     + Arrays.toString(testResult.getParameters()) +  ".jpg"));
         }
         DriverProvider.getDriver().quit();
@@ -47,9 +49,9 @@ public class TestRunner {
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
     }
 
-    public void takeScreenShot(String testName) throws IOException {
+    public void takeScreenShot(String screenshotName) throws IOException {
         File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
-        FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + testName + ".jpg"));
+        FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
     }
 
     public void makePause(){
