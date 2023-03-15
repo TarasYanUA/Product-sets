@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Both test-cases are totally ready!">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Started to adapt to CS-Cart 4.16.1.">
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +41,11 @@
     "last_opened_file_path": "C:/Idea Projects/Product-sets/pom.xml"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Idea Projects\Product-sets\src\test\resources" />
+    </key>
+  </component>
   <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
@@ -293,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672992693754</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Started to adapt to CS-Cart 4.16.1.">
+      <created>1678895754499</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1678895754499</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,6 +328,7 @@
     <MESSAGE value="Second test-case: 4/7 are ready!" />
     <MESSAGE value="Created TestNg file." />
     <MESSAGE value="Both test-cases are totally ready!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Both test-cases are totally ready!" />
+    <MESSAGE value="Started to adapt to CS-Cart 4.16.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Started to adapt to CS-Cart 4.16.1." />
   </component>
 </project>
