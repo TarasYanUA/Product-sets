@@ -13,7 +13,6 @@ import taras.yanishevskyi.storefront.StProductPage;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-
 import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 
 /*
@@ -34,18 +33,20 @@ public class VendorCreatesProductSet extends TestRunner{
             DriverProvider.getDriver().findElement(By.cssSelector(".close.cm-notification-close")).click();
         }   //Выключаем сообщение о предупредлении, если оно появилось
         admHomePage.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
+        if(DriverProvider.getDriver().findElements(By.cssSelector("td.nowrap.right a[href*='addon=master_products']")).size()==1){
         admHomePage.clickButtonInstallAddon();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5))).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//li[@class='dropdown nav__header-main-menu-item ']")));
-        DriverProvider.getDriver().navigate().refresh();
+        DriverProvider.getDriver().navigate().refresh();    }
         //Работаем со страницей редактирования товара
         AdmProductPage admProductPage = admHomePage.navigateToProductPage();
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
         admProductPage.clickProductInSearchList();
-        makePause();
-        admProductPage.clickProductVendor();
-        admProductPage.selectProductBelongsToAllVendors();
-        admProductPage.clickButtonSaveOnEditProductPage();
+        if (DriverProvider.getDriver().findElements(By.cssSelector("label[for*='elm_parent_product']")).size() < 1) {
+            admProductPage.clickProductVendor();
+            admProductPage.selectProductBelongsToAllVendors();
+            admProductPage.clickButtonSaveOnEditProductPage();
+        }
         AdmCustomersPage admCustomersPage = admHomePage.navigateToCustomersPage();
         admCustomersPage.navigateToGearwheelOfSimtechVendor();
         admCustomersPage.clickActAsUser();
@@ -86,8 +87,9 @@ public class VendorCreatesProductSet extends TestRunner{
         String expectedPage = "Simtech";
         Assert.assertEquals(actualPage, expectedPage, "It is not a vendor page!");
         //На странице продавца проверяем, что комплект присутствует
-        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector(".sol-inner-container")).isEnabled());
-        takeScreenShot("210 Product page of Simtech vendor");
+        Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector(".sol-inner-container")).isEnabled(),
+                "Product set is absent on vendor's product page!");
+        takeScreenShot("210 Product set on Simtech product page");
         //Покупаем комплект товаров
         StProductPage stProductPage = new StProductPage();
         stProductPage.clickFieldSelectProducts();

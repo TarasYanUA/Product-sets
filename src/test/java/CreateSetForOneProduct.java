@@ -32,43 +32,45 @@ public class CreateSetForOneProduct extends TestRunner{
         WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
             admHomePage.settingQuickView.click();
+            admHomePage.clickSaveButtonOfSettings();
         }
-        admHomePage.clickSaveButtonOfSettings();
 
         //Работаем с товаром
         AdmProductPage admProductPage = admHomePage.navigateToProductPage();
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();
-        admProductPage.clickAddNewSet();
-        admProductPage.clickAndTypeTitleOfSet("Клюшки для гольфа");
-        admProductPage.clickAddProductsToSet();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        admProductPage.clickSearchInCategoriesForSet();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        admProductPage.clickCategoryGolfClubs();
-        admProductPage.clickSearchButtonForProductsAtSet();
-        makePause();
-        admProductPage.clickCheckboxForAllProducts();
-        admProductPage.clickButtonAddProductsAndClose();
-        admProductPage.clickButtonSaveOnEditProductPage(); //Первый набор товаров готов
-        admProductPage.clickAddNewSet();
-        ((JavascriptExecutor) getDriver()).executeScript("scroll(0,500);");
-        admProductPage.clickAndTypeTitleOfSet("Мячи для гольфа");
-        admProductPage.clickAddProductsToSecondSet();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        admProductPage.clickSearchInCategoriesForSet();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
-        admProductPage.clickCategoryBallsForGolf();
-        admProductPage.clickSearchButtonForProductsAtSet();
-        makePause();
-        admProductPage.clickCheckboxForAllProducts();
-        admProductPage.clickButtonAddProductsAndClose();
-        admProductPage.clickButtonSaveOnEditProductPage(); //Второй набор товаров готов
-        makePause();
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#box_add_ab__ps_set")).size() < 1) {
+            admProductPage.clickAddNewSet();
+            admProductPage.clickAndTypeTitleOfSet("Клюшки для гольфа");
+            admProductPage.clickAddProductsToSet();
+            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            admProductPage.clickSearchInCategoriesForSet();
+            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            admProductPage.clickCategoryGolfClubs();
+            admProductPage.clickSearchButtonForProductsAtSet();
+            makePause();
+            admProductPage.clickCheckboxForAllProducts();
+            admProductPage.clickButtonAddProductsAndClose();
+            admProductPage.clickButtonSaveOnEditProductPage(); //Первый набор товаров готов
+            admProductPage.clickAddNewSet();
+            ((JavascriptExecutor) getDriver()).executeScript("scroll(0,500);");
+            admProductPage.clickAndTypeTitleOfSet("Мячи для гольфа");
+            admProductPage.clickAddProductsToSecondSet();
+            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            admProductPage.clickSearchInCategoriesForSet();
+            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            admProductPage.clickCategoryBallsForGolf();
+            admProductPage.clickSearchButtonForProductsAtSet();
+            makePause();
+            admProductPage.clickCheckboxForAllProducts();
+            admProductPage.clickButtonAddProductsAndClose();
+            admProductPage.clickButtonSaveOnEditProductPage(); //Второй набор товаров готов
+            makePause();
+        }
         admProductPage.clickGearWheelOfProduct();
         admProductPage.clickPreviewButton();
 

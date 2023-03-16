@@ -30,7 +30,6 @@ public class TestRunner {
         AdmHomePage admHomePage = new AdmHomePage();
         admHomePage.clickButtonAuthorization();
         admHomePage.closeBottomAdminPanel();
-        DriverProvider.getDriver().findElement(By.cssSelector(".cm-notification-close")).click();
     }
 
     @AfterMethod
@@ -47,6 +46,9 @@ public class TestRunner {
     public void focusBrowserTab(int tabNum) {
         ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
+        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).size()>0){
+            DriverProvider.getDriver().findElement(By.cssSelector(".cm-btn-success")).click();
+        }
     }
 
     public void takeScreenShot(String screenshotName) throws IOException {

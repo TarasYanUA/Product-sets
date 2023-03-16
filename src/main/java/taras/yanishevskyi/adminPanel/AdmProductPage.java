@@ -9,7 +9,7 @@ public class AdmProductPage extends AbstractPage {
     public AdmProductPage() {super();}
     @FindBy(xpath = "//div[@class=\" btn-bar btn-toolbar nav__actions-bar dropleft\"]//div[@class=\"btn-group dropleft\"]")
     private WebElement gearwheelOfProduct;
-    @FindBy(xpath = "//a[contains(@href, 'preview')]")
+    @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(@href, 'preview')]")
     private WebElement previewButton;
     @FindBy(xpath = "//a[@class=\"products-list__image--link\"][contains(@href, 'product_id=187')]")
     private WebElement productTourStaffBag;

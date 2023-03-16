@@ -20,7 +20,7 @@ public class AdmHomePage extends AbstractPage{
         Actions hoverAddonsDropDown = new Actions(DriverProvider.getDriver());
         hoverAddonsDropDown.moveToElement(elementOfAddonsDropDown);
         hoverAddonsDropDown.perform();
-        addonsManagementPage.click();
+        downloadedAddonsPage.click();
     }
     public WebElement hoverMenuProducts(){
         return menuProducts;
@@ -62,7 +62,7 @@ public class AdmHomePage extends AbstractPage{
     private WebElement bottomAdminPanel;
 
     //Настройки CS-Cart
-    @FindBy(css = "#mainrightnavbar")
+    @FindBy(id = "elm_menu_settings")
     private WebElement settingsOfCsCart;
     @FindBy(css = "#elm_menu_settings_Appearance")
     private WebElement appearanceSettingsOfCsCart;
@@ -71,10 +71,10 @@ public class AdmHomePage extends AbstractPage{
     @FindBy(css = ".btn.btn-primary.cm-submit")
     private WebElement saveButtonOfSettings;
 
-    @FindBy(xpath = "(//a[@class=\"dropdown-toggle addons\"])[1]")
+    @FindBy(id = "elm_menu_addons")
     private WebElement addonsDropDown;
-    @FindBy(id = "elm_menu_addons_manage_addons")
-    private WebElement addonsManagementPage;
+    @FindBy(id = "elm_menu_addons_downloaded_add_ons")
+    private WebElement downloadedAddonsPage;
     @FindBy(css = "#elm_addon")
     private WebElement searchFieldAtManagementPage;
     @FindBy(css = "td.nowrap.right a[href*='addon=master_products']")
