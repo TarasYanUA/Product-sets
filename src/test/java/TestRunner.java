@@ -14,9 +14,7 @@ import java.util.Arrays;
 import static taras.yanishevskyi.constants.Constants.BASIC_URL;
 
 /*
-Модуль "Product sets" (Комплекты для товара (Up-Sell)) + тема Юни2(MVRu) v4.15.2e.
-Актуально для CS-Cart 4.15.2.
-
+Модуль "Product sets" (Комплекты для товара (Up-Sell)) + тема Юни2(MVRu) v4.16.1b.
 Тест можно запустить через файл TestNG.xml
 */
 
