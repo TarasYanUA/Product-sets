@@ -13,17 +13,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import static taras.yanishevskyi.constants.Constants.BASIC_URL;
 
-/*
-Модуль "Product sets" (Комплекты для товара (Up-Sell)) + тема Юни2(MVRu) v4.16.1b.
-Тест можно запустить через файл TestNG.xml
-*/
-
 public class TestRunner {
 
     @BeforeMethod
     public void prepareBrowser() {
         DriverProvider.getDriver().get(BASIC_URL);
-        DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(4)); //Общая задержка
+        DriverProvider.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(2)); //Общая задержка
         DriverProvider.getDriver().manage().window().maximize();    //Размер браузера на весь экран
         AdmHomePage admHomePage = new AdmHomePage();
         admHomePage.clickButtonAuthorization();

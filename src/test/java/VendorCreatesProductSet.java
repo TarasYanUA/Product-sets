@@ -28,7 +28,7 @@ public class VendorCreatesProductSet extends TestRunner{
     public void checkVendorCanCreateProductSet() throws IOException {
         //Устанавливаем модуль "Общие товары для продавцов"
         AdmHomePage admHomePage = new AdmHomePage();
-        admHomePage.navigateToAddonsManagementPage();
+        admHomePage.navigateTo_DownloadedAddonsPage();
         if(!DriverProvider.getDriver().findElements(By.cssSelector(".alert")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector(".close.cm-notification-close")).click();
         }   //Выключаем сообщение о предупреждении, если оно появилось
@@ -40,7 +40,7 @@ public class VendorCreatesProductSet extends TestRunner{
         DriverProvider.getDriver().navigate().refresh();    }
 
         //Работаем со страницей редактирования товара
-        AdmProductPage admProductPage = admHomePage.navigateToProductPage();
+        AdmProductPage admProductPage = admHomePage.navigateToSection_Products();
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
         admProductPage.clickProductInSearchList();
         if (DriverProvider.getDriver().findElements(By.cssSelector("label[for*='elm_parent_product']")).isEmpty()) {
@@ -49,7 +49,7 @@ public class VendorCreatesProductSet extends TestRunner{
             admProductPage.clickButtonSaveOnEditProductPage();
         }
         AdmCustomersPage admCustomersPage = admHomePage.navigateToCustomersPage();
-        admCustomersPage.navigateToGearwheelOfSimtechVendor();
+        admCustomersPage.navigateToVendor_CsCart();
         admCustomersPage.clickActAsUser();
         focusBrowserTab(1);
 
@@ -74,7 +74,7 @@ public class VendorCreatesProductSet extends TestRunner{
         admProductPage.clickButtonAddProductsAndClose();
         admProductPage.clickButtonSaveOnEditProductPage();
         focusBrowserTab(0);
-        admHomePage.navigateToProductPage();
+        admHomePage.navigateToSection_Products();
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
         admProductPage.clickIconThumbUp();
         admProductPage.clickProductInSearchList();

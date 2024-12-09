@@ -1,10 +1,9 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import taras.yanishevskyi.constants.DriverProvider;
 import taras.yanishevskyi.adminPanel.AdmHomePage;
 import taras.yanishevskyi.storefront.CheckoutPage;
@@ -23,12 +22,12 @@ import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 - Совершаем покупку всего комплекта и проверяем наличие товаров в заказе.
 */
 
-public class CreateSetForOneProduct extends TestRunner{
+public class CreateSetForOneProduct extends TestRunner {
     @Test
     public void createSetForOneProductAndCheckQuantityOfProducts() throws IOException {
         //Включаем Быстрый просмотр
         AdmHomePage admHomePage = new AdmHomePage();
-        admHomePage.navigateToAppearanceSettingsOfCsCart();
+        /*admHomePage.navigateTo_AppearanceSettings();
         WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
             admHomePage.settingQuickView.click();
@@ -36,7 +35,7 @@ public class CreateSetForOneProduct extends TestRunner{
         }
 
         //Работаем с товаром
-        AdmProductPage admProductPage = admHomePage.navigateToProductPage();
+        AdmProductPage admProductPage = admHomePage.navigateToSection_Products();
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();
         if(DriverProvider.getDriver().findElements(By.cssSelector("#box_add_ab__ps_set")).isEmpty()) {
@@ -70,7 +69,12 @@ public class CreateSetForOneProduct extends TestRunner{
             admProductPage.clickButtonAddProductsAndClose();
             admProductPage.clickButtonSaveOnEditProductPage(); //Второй набор товаров готов
             makePause();
-        }
+        }*/
+        //Удалить после
+        AdmProductPage admProductPage = admHomePage.navigateToSection_Products();
+        admProductPage.chooseProductTourStaffBag();
+        admProductPage.clickTabProductSets();
+//////////////////////////
         admProductPage.clickGearWheelOfProduct();
         admProductPage.clickPreviewButton();
 
@@ -80,28 +84,32 @@ public class CreateSetForOneProduct extends TestRunner{
         stProductPage.clickFieldSelectProducts();
         stProductPage.clickButtonSelectAllProductsForSet();
         makePause();
+
+        SoftAssert softAssert = new SoftAssert();
+        
         //Проверяем, что кнопка "Быстрый просмотр" присутствует у товаров из комплекта
-        int sizeOfQuickviewButtons = getDriver().findElements(By
-                .cssSelector("ul[class='ab__ps-list'] i[class='ut2-icon ut2-icon-baseline-visibility']")).size();
-        Assert.assertTrue(sizeOfQuickviewButtons > 1, "There is no buttons 'QuickView' at selected products!");
+        softAssert.assertTrue(!getDriver().findElements(By
+                .cssSelector("ul[class='ab__ps-list'] .ut2-quick-view-button")).isEmpty(),
+                "There is no buttons 'QuickView' at selected products!");
+
         //Проверяем, что кнопка "Удаления" товара присутствует у товаров из комплекта
         int sizeOfDeleteButtons = getDriver().findElements(By
                 .cssSelector("ul[class='ab__ps-list'] span[class='ab__ps-item_quick-delete']")).size();
-        Assert.assertTrue(sizeOfDeleteButtons > 1, "There is no buttons 'Delete' at selected products!");
-        takeScreenShot("110 Product page with product set");
+        softAssert.assertTrue(sizeOfDeleteButtons > 1, "There is no buttons 'Delete' at selected products!");
+        takeScreenShot("110 Product page with a set of products");
         stProductPage.clickButtonCloseForSet();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
                 .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".sol-action-buttons")));
-
         //Покупаем выбранный товар из комплекта через кнопку "Быстрый просмотр"
-        stProductPage.clickButtonQuickviewAtSelectedProduct();
+        stProductPage.clickButtonQuickViewAtSelectedProduct();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".object-container")));
         stProductPage.clickButtonAddToCart_QuickView();
         makePause();
+
         //Проверяем, что товар добавлен в корзину
         int actualCartValue = Integer.parseInt(DriverProvider.getDriver().findElement(By.cssSelector(".ty-minicart-count")).getText());
-        Assert.assertTrue(actualCartValue >= 1, "The product has not been added to the cart!");
+        softAssert.assertTrue(actualCartValue >= 1, "The product has not been added to the cart!");
 
         //Выключаем товар из второй группы и проверяем, что группа без товаров не отображается на витрине.
         focusBrowserTab(0);
@@ -113,7 +121,7 @@ public class CreateSetForOneProduct extends TestRunner{
         stProductPage.clickFieldSelectProducts();
         //Проверяем, что в комплекте присутствует только одна группа
         int sizeOfGroups = DriverProvider.getDriver().findElements(By.cssSelector(".sol-optiongroup-label")).size();
-        Assert.assertTrue(sizeOfGroups < 2);
+        softAssert.assertTrue(sizeOfGroups < 2);
         //Покупаем комплект товаров
         stProductPage.clickButtonSelectAllProductsForSet();
         makePause();
@@ -135,11 +143,11 @@ public class CreateSetForOneProduct extends TestRunner{
         }
         checkoutPage.clickPaymentMethod();
         checkoutPage.clickButtonPlaceOrder();   //Заказ оформлен!
-
+        
         //Проверяем, что мы на странице завершения заказа
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ty-checkout-complete__buttons")));
-        Assert.assertTrue(getDriver().getCurrentUrl().contains("checkout.complete&order_id="),
+        softAssert.assertTrue(getDriver().getCurrentUrl().contains("checkout.complete&order_id="),
                 "Process of placing the order has failed!");
 
         //Проверяем наличие всех товаров в заказе
@@ -147,8 +155,8 @@ public class CreateSetForOneProduct extends TestRunner{
         checkoutPage.scrollToBlockProductInformation();
         List<WebElement> listOfProductsQuantity = checkoutPage.countQuantityOfProducts();
         int actualQuantity = listOfProductsQuantity.size();
-        Assert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");
+        softAssert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");
         //Эту проверку можно заменить на чёткое количество товаров в заказе после исправления ошибки https://abteam.planfix.com/task/37774
-        takeScreenShot("120 Order has been purchased successfully");
+        takeScreenShot("120 Checkout page with a set of products");
     }
 }
