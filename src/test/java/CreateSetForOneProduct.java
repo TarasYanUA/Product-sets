@@ -39,7 +39,7 @@ public class CreateSetForOneProduct extends TestRunner{
         AdmProductPage admProductPage = admHomePage.navigateToProductPage();
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#box_add_ab__ps_set")).size() < 1) {
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#box_add_ab__ps_set")).isEmpty()) {
             admProductPage.clickAddNewSet();
             admProductPage.clickAndTypeTitleOfSet("Клюшки для гольфа");
             admProductPage.clickAddProductsToSet();
@@ -130,16 +130,18 @@ public class CreateSetForOneProduct extends TestRunner{
         checkoutPage.choosePaymentMethod_PhoneOrdering();
         makePause();
         checkoutPage.checkAgreementTermsAndConditions();
-        if(getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).size()>0){
+        if(!getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).isEmpty()){
         checkoutPage.checkAgreementPersonalData();
         }
         checkoutPage.clickPaymentMethod();
         checkoutPage.clickButtonPlaceOrder();   //Заказ оформлен!
+
         //Проверяем, что мы на странице завершения заказа
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ty-checkout-complete__buttons")));
         Assert.assertTrue(getDriver().getCurrentUrl().contains("checkout.complete&order_id="),
                 "Process of placing the order has failed!");
+
         //Проверяем наличие всех товаров в заказе
         checkoutPage.clickButtonOrderDetails();
         checkoutPage.scrollToBlockProductInformation();

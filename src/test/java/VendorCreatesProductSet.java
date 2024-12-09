@@ -29,20 +29,21 @@ public class VendorCreatesProductSet extends TestRunner{
         //Устанавливаем модуль "Общие товары для продавцов"
         AdmHomePage admHomePage = new AdmHomePage();
         admHomePage.navigateToAddonsManagementPage();
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".alert")).size()>0){
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".alert")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector(".close.cm-notification-close")).click();
-        }   //Выключаем сообщение о предупредлении, если оно появилось
+        }   //Выключаем сообщение о предупреждении, если оно появилось
         admHomePage.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
         if(DriverProvider.getDriver().findElements(By.cssSelector("td.nowrap.right a[href*='addon=master_products']")).size()==1){
         admHomePage.clickButtonInstallAddon();
         (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5))).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//li[@class='dropdown nav__header-main-menu-item ']")));
         DriverProvider.getDriver().navigate().refresh();    }
+
         //Работаем со страницей редактирования товара
         AdmProductPage admProductPage = admHomePage.navigateToProductPage();
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
         admProductPage.clickProductInSearchList();
-        if (DriverProvider.getDriver().findElements(By.cssSelector("label[for*='elm_parent_product']")).size() < 1) {
+        if (DriverProvider.getDriver().findElements(By.cssSelector("label[for*='elm_parent_product']")).isEmpty()) {
             admProductPage.clickProductVendor();
             admProductPage.selectProductBelongsToAllVendors();
             admProductPage.clickButtonSaveOnEditProductPage();
@@ -86,10 +87,12 @@ public class VendorCreatesProductSet extends TestRunner{
         String actualPage = DriverProvider.getDriver().findElement(By.cssSelector("div.ut2-vendor-block__name a")).getText();
         String expectedPage = "Simtech";
         Assert.assertEquals(actualPage, expectedPage, "It is not a vendor page!");
+
         //На странице продавца проверяем, что комплект присутствует
         Assert.assertTrue(DriverProvider.getDriver().findElement(By.cssSelector(".sol-inner-container")).isEnabled(),
                 "Product set is absent on vendor's product page!");
         takeScreenShot("210 Product set on Simtech product page");
+
         //Покупаем комплект товаров
         StProductPage stProductPage = new StProductPage();
         stProductPage.clickFieldSelectProducts();
@@ -108,17 +111,19 @@ public class VendorCreatesProductSet extends TestRunner{
         checkoutPage.choosePaymentMethod_PhoneOrdering();
         makePause();
         checkoutPage.checkAgreementTermsAndConditions();
-        if(getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).size()>0){
+        if(!getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).isEmpty()){
             checkoutPage.checkAgreementPersonalData();
         }
         checkoutPage.checkAgreementSimtech();
         checkoutPage.clickPaymentMethod();
         checkoutPage.clickButtonPlaceOrder();   //Заказ оформлен!
+
         //Проверяем, что мы на странице завершения заказа
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ty-checkout-complete__buttons")));
         Assert.assertTrue(getDriver().getCurrentUrl().contains("checkout.complete&order_id="),
                 "Process of placing the order has failed!");
+
         //Проверяем наличие всех товаров в заказе
         checkoutPage.clickButtonOrderDetails();
         checkoutPage.scrollToBlockProductInformation();

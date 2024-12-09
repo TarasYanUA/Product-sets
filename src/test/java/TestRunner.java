@@ -42,9 +42,9 @@ public class TestRunner {
     }
 
     public void focusBrowserTab(int tabNum) {
-        ArrayList tabs = new ArrayList<String> (DriverProvider.getDriver().getWindowHandles());
+        ArrayList tabs = new ArrayList<> (DriverProvider.getDriver().getWindowHandles());
         DriverProvider.getDriver().switchTo().window(tabs.get(tabNum).toString());
-        if(DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).size()>0){
+        if(!DriverProvider.getDriver().findElements(By.cssSelector(".cm-btn-success")).isEmpty()){
             DriverProvider.getDriver().findElement(By.cssSelector(".cm-btn-success")).click();
         }
     }
