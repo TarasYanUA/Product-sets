@@ -4,12 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Added adaptation to CS-Cart 4.16.1">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Improved the code.&#10;Updated vocabularies in pom file.">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/CheckMenuToBeActive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmCustomersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmCustomersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/LICENSE.chromedriver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +31,42 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="CsCart_4.18.3" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -52,22 +95,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/Product-sets (Uni2 MV)/pom.xml&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.CreateSetForOneProduct.executor": "Run",
+    "git-widget-placeholder": "CsCart__4.18.3",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IDEA Projects\Product-sets (Uni2 MV)\src\test\resources" />
       <recent name="C:\Idea Projects\Product-sets\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.VendorCreatesProductSet">
+  <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
       <module name="Product-sets" />
@@ -124,8 +170,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.VendorCreatesProductSet" />
         <item itemvalue="TestNG.CreateSetForOneProduct" />
+        <item itemvalue="TestNG.VendorCreatesProductSet" />
         <item itemvalue="Application.Main" />
         <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
       </list>
@@ -336,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1678963694948</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Improved the code.&#10;Updated vocabularies in pom file.">
+      <option name="closed" value="true" />
+      <created>1733739377435</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1733739377435</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,6 +419,7 @@
     <MESSAGE value="Both test-cases are totally ready!" />
     <MESSAGE value="Started to adapt to CS-Cart 4.16.1." />
     <MESSAGE value="Added adaptation to CS-Cart 4.16.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added adaptation to CS-Cart 4.16.1" />
+    <MESSAGE value="Improved the code.&#10;Updated vocabularies in pom file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved the code.&#10;Updated vocabularies in pom file." />
   </component>
 </project>

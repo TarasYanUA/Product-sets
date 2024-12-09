@@ -13,26 +13,37 @@ public class CheckoutPage extends AbstractPage {
     public CheckoutPage() {super();}
     @FindBy(xpath = "//input[contains(@id, 'id_accept_terms')]")
     private WebElement agreementTermsAndConditions;
+
     @FindBy(xpath = "//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")
     public WebElement agreementPersonalData;
+
     @FindBy(xpath = "//input[contains(@id, 'product_agreements')]")
     private WebElement agreementSimtech;
+
     @FindBy(css = ".litecheckout__submit-btn")
     private WebElement buttonPlaceOrder;
-    @FindBy(xpath = "//label[@class='b--pay-way__opted']//div[@class='b--pay-way__opted__text']")
+
+    @FindBy(css = ".b--pay-ship__opted__text__title")
     private WebElement paymentMethod;
+
     @FindBy(css = "#payments_2")
     private WebElement paymentMethod_PhoneOrdering;
+
     @FindBy(id = "bp_off_bottom_panel")
     private WebElement hideAdminToolbar;
+
     @FindBy(xpath = "//a[contains(@href, 'orders.details&order_id=')]")
     private WebElement buttonOrderDetails;
+
     @FindBy(css = ".ty-float-left.ty-orders-detail__table-image")
     private List<WebElement> quantityOfProducts;
+
     @FindBy(css = "select#litecheckout_country")
     private WebElement countryField;
+
     @FindBy(css = "input#litecheckout_city_state")
     private WebElement cityField;
+
     @FindBy(xpath = "(//div[@class='ty-float-left ty-orders-detail__table-image'])[4]")
     private WebElement blockProductInformation;
 
