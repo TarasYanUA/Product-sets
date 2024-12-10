@@ -1,9 +1,15 @@
 package taras.yanishevskyi.adminPanel;
 
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.yanishevskyi.constants.AbstractPage;
+
+import java.time.Duration;
+
+import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 
 public class AdmProductPage extends AbstractPage {
     public AdmProductPage() {super();}
@@ -59,7 +65,7 @@ public class AdmProductPage extends AbstractPage {
     @FindBy(css = "input#elm_product_status_0_d")
     private WebElement switcherDisable;
 
-    @FindBy(css = ".sidebar-field input")
+    @FindBy(css = ".context-search__input")
     private WebElement searchFieldAtProductPage;
 
     @FindBy(css = ".products-list__image--link img")
@@ -70,9 +76,6 @@ public class AdmProductPage extends AbstractPage {
 
     @FindBy(css = "a[title='Все продавцы (общий товар)']")
     private WebElement productBelongsToAllVendors;
-
-    @FindBy(css = ".cs-icon.icon-thumbs-up")
-    private WebElement iconThumbUp;
 
 
     public void clickGearWheelOfProduct(){
@@ -96,6 +99,8 @@ public class AdmProductPage extends AbstractPage {
     }
     public void clickAddProductsToSet(){
         addProductsToSet.click();
+        (new WebDriverWait((getDriver()), Duration.ofSeconds(3)))
+                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
     }
     public void clickAddProductsToSecondSet(){
         addProductsToSecondSet.click();
@@ -126,7 +131,11 @@ public class AdmProductPage extends AbstractPage {
     public void clickAndTypeSearchFieldAtProductPage(String value){
         searchFieldAtProductPage.click();
         searchFieldAtProductPage.sendKeys(value);
-        searchFieldAtProductPage.sendKeys(Keys.ENTER);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
     public void clickProductInSearchList(){
         productInSearchList.click();
@@ -137,5 +146,4 @@ public class AdmProductPage extends AbstractPage {
     public void selectProductBelongsToAllVendors(){
         productBelongsToAllVendors.click();
     }
-    public void clickIconThumbUp(){iconThumbUp.click();}
 }

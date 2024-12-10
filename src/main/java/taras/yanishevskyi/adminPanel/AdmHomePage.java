@@ -61,11 +61,11 @@ public class AdmHomePage extends AbstractPage implements CheckMenuToBeActive {
     //Меню "Продавцы -- Продавцы"
     @FindBy(xpath = "//span[text()='Продавцы']")
     WebElement menu_Customers;
-    @FindBy(xpath = "//span[text()='Администраторы продавца']")
+    @FindBy(id = "vendors_vendors")
     WebElement section_Customers;
 
 
-    public AdmCustomersPage navigateToCustomersPage(){
+    public AdmCustomersPage navigateToSection_Customers(){
         checkMenuToBeActive("dispatch=companies.manage", menu_Customers);
         section_Customers.click();
         return new AdmCustomersPage();

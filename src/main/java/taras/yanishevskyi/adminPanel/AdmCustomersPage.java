@@ -6,31 +6,35 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import taras.yanishevskyi.constants.AbstractPage;
 import taras.yanishevskyi.constants.DriverProvider;
+import java.util.List;
 
 public class AdmCustomersPage extends AbstractPage {
-    public AdmCustomersPage() {super();}
+    public AdmCustomersPage() {
+        super();
+    }
 
     @FindBy(css = "tr[data-ca-id='1'] .btn__icon--caret")
-    private WebElement gearwheelOfVendor_CsCart;
+    WebElement gearwheelOfVendor_CsCart;
+
+    @FindBy(xpath = "//div[@class='btn-group dropleft open']//a[contains(text(), 'Просмотреть администраторов продавца')]")
+    WebElement button_viewVendorAdmins;
+
+    @FindBy(css = "tr[data-ca-id='10'] .btn__icon--caret")
+    WebElement gearwheelOfVendorAdmin_Bill;
 
     @FindBy(css = "a[href*='act_as_user&user_id=10']")
-    private WebElement actAsUser;
+    WebElement button_actAsUser;
+
 
     //Работаем с админкой Продавца
-    @FindBy(css = "a[href='#products']")
-    private WebElement vendorProductMenu;
+    @FindBy(css = "a[href$='dispatch=products.master_products']")
+    public WebElement button_AddProductFromCatalog;
 
-    @FindBy(css = "a[href*='dispatch=products.manage'][class*='nav__menu-subitem']")
-    private WebElement vendorProductPage;
-
-    @FindBy(xpath = "//a[text()='Товары, которые можно продавать']")
-    private WebElement sidebar_ProductsThatCanBeSold;
-
-    @FindBy(css = "a[href*='product_id=248'][class*='btn']")
-    private WebElement productButtonSell;
+    @FindBy(css = "a[href*='dispatch=products.sell_master_product']")
+    public List<WebElement> buttons_SellThis;
 
     @FindBy(css = "#elm_in_stock")
-    private WebElement inStockField;
+    WebElement inStockField;
 
     @FindBy(css = "#ab__product_sets")
     public WebElement tabProductSets;
@@ -40,20 +44,27 @@ public class AdmCustomersPage extends AbstractPage {
         Actions hover = new Actions(DriverProvider.getDriver());
         hover.moveToElement(gearwheelOfVendor_CsCart).perform();
         gearwheelOfVendor_CsCart.click();
+        button_viewVendorAdmins.click();
     }
 
-    public void clickActAsUser(){actAsUser.click();}
-    public void clickVendorProductMenu(){vendorProductMenu.click();}
-    public void clickVendorProductPage(){vendorProductPage.click();}
-    public void clickSidebar_ProductsThatCanBeSold(){sidebar_ProductsThatCanBeSold.click();}
-    public void clickProductButtonSell(){productButtonSell.click();}
-    public void clickAndTypeInStockField(String value){
+    public void logInAsUser() {
+        Actions hover = new Actions(DriverProvider.getDriver());
+        hover.moveToElement(gearwheelOfVendorAdmin_Bill).perform();
+        gearwheelOfVendorAdmin_Bill.click();
+        button_actAsUser.click();
+    }
+
+    public void clickAndTypeInStockField(String value) {
         inStockField.click();
         inStockField.click();
         inStockField.sendKeys(value);
     }
-    public void clickTabProductSets(){tabProductSets.click();}
-    public void selectAProductForSet(By by){
+
+    public void clickTabProductSets() {
+        tabProductSets.click();
+    }
+
+    public void selectAProductForSet(By by) {
         DriverProvider.getDriver().findElement(by).click();
     }
 }

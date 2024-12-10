@@ -154,5 +154,6 @@ public class CreateSetForOneProduct extends TestRunner {
         softAssert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");
         //Эту проверку можно заменить на чёткое количество товаров в заказе после исправления ошибки https://abteam.planfix.com/task/37774
         takeScreenShot("120 Purchase page with a set of products");
+        softAssert.assertAll();
     }
 }

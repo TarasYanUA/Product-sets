@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Adapted to CS-Cart 4.18.3.&#10;Improved code.&#10;Test &quot;CreateSetForOneProduct&quot; is totally ready!.&#10;Created ReadMe file.&#10;Updated drivers.">
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Fixed condition in the editing product page.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmCustomersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmCustomersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,25 +98,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;TestNG.CreateSetForOneProduct.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CsCart__4.18.3&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/IDEA Projects/UniTheme2/pom.xml&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "TestNG.CreateSetForOneProduct.executor": "Run",
+    "TestNG.VendorCreatesProductSet.executor": "Run",
+    "git-widget-placeholder": "CsCart__4.18.3",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/IDEA Projects/UniTheme2/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\IDEA Projects\Product-sets (Uni2 MV)\src\test\resources" />
       <recent name="C:\Idea Projects\Product-sets\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
+  <component name="RunManager" selected="TestNG.VendorCreatesProductSet">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
       <module name="Product-sets" />
@@ -170,10 +177,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.CreateSetForOneProduct" />
         <item itemvalue="TestNG.VendorCreatesProductSet" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
+        <item itemvalue="TestNG.CreateSetForOneProduct" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -398,7 +405,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733762218386</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Fixed condition in the editing product page.">
+      <option name="closed" value="true" />
+      <created>1733818766303</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1733818766303</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -429,6 +444,7 @@
     <MESSAGE value="Added adaptation to CS-Cart 4.16.1" />
     <MESSAGE value="Improved the code.&#10;Updated vocabularies in pom file." />
     <MESSAGE value="Adapted to CS-Cart 4.18.3.&#10;Improved code.&#10;Test &quot;CreateSetForOneProduct&quot; is totally ready!.&#10;Created ReadMe file.&#10;Updated drivers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adapted to CS-Cart 4.18.3.&#10;Improved code.&#10;Test &quot;CreateSetForOneProduct&quot; is totally ready!.&#10;Created ReadMe file.&#10;Updated drivers." />
+    <MESSAGE value="Fixed condition in the editing product page." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed condition in the editing product page." />
   </component>
 </project>
