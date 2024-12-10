@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,7 +28,7 @@ public class CreateSetForOneProduct extends TestRunner {
     public void createSetForOneProductAndCheckQuantityOfProducts() throws IOException {
         //Включаем Быстрый просмотр
         AdmHomePage admHomePage = new AdmHomePage();
-        /*admHomePage.navigateTo_AppearanceSettings();
+        admHomePage.navigateTo_AppearanceSettings();
         WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
         if(!checkboxSettingQuickView.isSelected()){
             admHomePage.settingQuickView.click();
@@ -38,7 +39,7 @@ public class CreateSetForOneProduct extends TestRunner {
         AdmProductPage admProductPage = admHomePage.navigateToSection_Products();
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#box_add_ab__ps_set")).isEmpty()) {
+        if(DriverProvider.getDriver().findElements(By.cssSelector("#box_ab__ps_")).isEmpty()) {
             admProductPage.clickAddNewSet();
             admProductPage.clickAndTypeTitleOfSet("Клюшки для гольфа");
             admProductPage.clickAddProductsToSet();
@@ -69,12 +70,7 @@ public class CreateSetForOneProduct extends TestRunner {
             admProductPage.clickButtonAddProductsAndClose();
             admProductPage.clickButtonSaveOnEditProductPage(); //Второй набор товаров готов
             makePause();
-        }*/
-        //Удалить после
-        AdmProductPage admProductPage = admHomePage.navigateToSection_Products();
-        admProductPage.chooseProductTourStaffBag();
-        admProductPage.clickTabProductSets();
-//////////////////////////
+        }
         admProductPage.clickGearWheelOfProduct();
         admProductPage.clickPreviewButton();
 
@@ -157,6 +153,6 @@ public class CreateSetForOneProduct extends TestRunner {
         int actualQuantity = listOfProductsQuantity.size();
         softAssert.assertTrue(actualQuantity > 3, "There is a wrong number of products at the order!");
         //Эту проверку можно заменить на чёткое количество товаров в заказе после исправления ошибки https://abteam.planfix.com/task/37774
-        takeScreenShot("120 Checkout page with a set of products");
+        takeScreenShot("120 Purchase page with a set of products");
     }
 }

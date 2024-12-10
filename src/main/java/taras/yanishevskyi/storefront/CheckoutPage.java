@@ -29,9 +29,6 @@ public class CheckoutPage extends AbstractPage {
     @FindBy(css = "#payments_2")
     private WebElement paymentMethod_PhoneOrdering;
 
-    @FindBy(id = "bp_off_bottom_panel")
-    private WebElement hideAdminToolbar;
-
     @FindBy(xpath = "//a[contains(@href, 'orders.details&order_id=')]")
     private WebElement buttonOrderDetails;
 
@@ -63,9 +60,6 @@ public class CheckoutPage extends AbstractPage {
     }
     public void choosePaymentMethod_PhoneOrdering(){
         paymentMethod_PhoneOrdering.click();
-    }
-    public void clickHideAdminToolbar(){
-        hideAdminToolbar.click();
     }
     public void clickButtonOrderDetails(){
         buttonOrderDetails.click();
