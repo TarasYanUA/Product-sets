@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Code is improved.&#10;All test-cases work good.&#10;Changed Asserts on SoftAsserts.">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,22 +64,22 @@
     &quot;assignee&quot;: &quot;TarasYanUA&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/TarasYanUA/Product-sets.git&quot;,
-    &quot;accountId&quot;: &quot;51eb8828-6df6-4bb4-96b1-341c135a258d&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TarasYanUA/Product-sets.git",
+    "accountId": "9adb2400-f4f1-4d9c-9226-41908cfe1cec"
   },
-  &quot;recentNewPullRequestHead&quot;: {
-    &quot;server&quot;: {
-      &quot;useHttp&quot;: false,
-      &quot;host&quot;: &quot;github.com&quot;,
-      &quot;port&quot;: null,
-      &quot;suffix&quot;: null
+  "recentNewPullRequestHead": {
+    "server": {
+      "useHttp": false,
+      "host": "github.com",
+      "port": null,
+      "suffix": null
     },
-    &quot;owner&quot;: &quot;TarasYanUA&quot;,
-    &quot;repository&quot;: &quot;Product-sets&quot;
+    "owner": "TarasYanUA",
+    "repository": "Product-sets"
   }
-}</component>
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -102,6 +106,7 @@
     "TestNG.CreateSetForOneProduct.executor": "Run",
     "TestNG.VendorCreatesProductSet.executor": "Run",
     "git-widget-placeholder": "CsCart__4.18.3",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "E:/IDEA Projects/Product-sets (Uni2 MV)/pom.xml",
     "project.structure.last.edited": "Modules",
@@ -179,6 +184,13 @@
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.23892.409" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
