@@ -4,6 +4,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import taras.yanishevskyi.constants.AbstractPage;
+import taras.yanishevskyi.storefront.Utils;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class AdmHomePage extends AbstractPage implements CheckMenuToBeActive {
 
     public void closeNotificationIfPresent() {
         if (!closeNotification.isEmpty()) {
-            closeNotification.get(0).click();
+            closeNotification.getFirst().click();
         }
     }
 
@@ -41,6 +42,7 @@ public class AdmHomePage extends AbstractPage implements CheckMenuToBeActive {
     }
     public void clickButtonInstallAddon(){
         button_InstallAddon.click();
+        Utils.waitForSpinnerDisappear();
     }
 
 

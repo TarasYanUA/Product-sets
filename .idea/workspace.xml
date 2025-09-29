@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Code is improved.&#10;All test-cases work good.&#10;Changed Asserts on SoftAsserts.">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Updated drivers and vocabularies in pom file.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/Utils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -104,6 +109,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "TestNG.CreateSetForOneProduct.executor": "Run",
+    "TestNG.Product-sets/TestNG.xml.executor": "Run",
     "TestNG.VendorCreatesProductSet.executor": "Run",
     "git-widget-placeholder": "CsCart__4.18.3",
     "ignore.virus.scanning.warn.message": "true",
@@ -117,6 +123,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\IdeaProjects\Product-sets\src\test\resources" />
       <recent name="E:\IDEA Projects\Product-sets (Uni2 MV)\src\test\resources" />
       <recent name="C:\Idea Projects\Product-sets\src\test\resources" />
     </key>
@@ -179,8 +186,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.VendorCreatesProductSet" />
-        <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
         <item itemvalue="TestNG.CreateSetForOneProduct" />
+        <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -429,7 +436,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733838993283</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Updated drivers and vocabularies in pom file.">
+      <option name="closed" value="true" />
+      <created>1759133656372</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1759133656372</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -462,6 +477,7 @@
     <MESSAGE value="Adapted to CS-Cart 4.18.3.&#10;Improved code.&#10;Test &quot;CreateSetForOneProduct&quot; is totally ready!.&#10;Created ReadMe file.&#10;Updated drivers." />
     <MESSAGE value="Fixed condition in the editing product page." />
     <MESSAGE value="Code is improved.&#10;All test-cases work good.&#10;Changed Asserts on SoftAsserts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code is improved.&#10;All test-cases work good.&#10;Changed Asserts on SoftAsserts." />
+    <MESSAGE value="Updated drivers and vocabularies in pom file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated drivers and vocabularies in pom file." />
   </component>
 </project>

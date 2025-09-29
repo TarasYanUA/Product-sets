@@ -1,5 +1,6 @@
 package taras.yanishevskyi.storefront;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -7,10 +8,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 import taras.yanishevskyi.constants.AbstractPage;
 import taras.yanishevskyi.constants.DriverProvider;
+
 import java.util.List;
 
+import static taras.yanishevskyi.constants.DriverProvider.getDriver;
+
 public class CheckoutPage extends AbstractPage {
-    public CheckoutPage() {super();}
+    public CheckoutPage() {
+        super();
+    }
+
     @FindBy(xpath = "//input[contains(@id, 'id_accept_terms')]")
     private WebElement agreementTermsAndConditions;
 
@@ -44,51 +51,82 @@ public class CheckoutPage extends AbstractPage {
     @FindBy(xpath = "(//div[@class='ty-float-left ty-orders-detail__table-image'])[4]")
     private WebElement blockProductInformation;
 
+    @FindBy(css = "a[data-ca-target-id='litecheckout_login_block']")
+    private List<WebElement> buttonSignIn;
 
-    public void checkAgreementTermsAndConditions(){
+
+    public void checkAgreementTermsAndConditions() {
         agreementTermsAndConditions.click();
+        Utils.waitForSpinnerDisappear();
+        if (!getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).isEmpty()) {
+            agreementPersonalData.click();
+            Utils.waitForSpinnerDisappear();
+        }
     }
-    public void checkAgreementPersonalData(){
-        agreementPersonalData.click();
+
+    public void checkAgreementSimtech() {
+        agreementSimtech.click();
     }
-    public void checkAgreementSimtech(){agreementSimtech.click();}
-    public void clickButtonPlaceOrder(){
+
+    public void clickButtonPlaceOrder() {
         buttonPlaceOrder.click();
+        Utils.waitForSpinnerDisappear();
     }
-    public void clickPaymentMethod(){
+
+    public void clickPaymentMethod() {
         paymentMethod.click();
     }
-    public void choosePaymentMethod_PhoneOrdering(){
+
+    public void choosePaymentMethod_PhoneOrdering() {
         paymentMethod_PhoneOrdering.click();
+        Utils.waitForSpinnerDisappear();
     }
-    public void clickButtonOrderDetails(){
+
+    public void clickButtonOrderDetails() {
         buttonOrderDetails.click();
     }
-    public List<WebElement> countQuantityOfProducts(){
+
+    public List<WebElement> countQuantityOfProducts() {
         return quantityOfProducts;
     }
-    public void clickCountryField(){countryField.click();}
 
-    public Select getCountryField(){
+    public void clickCountryField() {
+        countryField.click();
+    }
+
+    public Select getCountryField() {
         return new Select(countryField);
     }
-    public void selectCountryField(String value){
+
+    public void selectCountryField(String value) {
         getCountryField().selectByValue(value);
     }
 
-    public void clickAndTypeCityField(String value){
+    public void clickAndTypeCityField(String value) {
         cityField.click();
         cityField.clear();
         cityField.sendKeys(value);
         cityField.sendKeys(Keys.ENTER);
+        Utils.waitForSpinnerDisappear();
     }
-    public WebElement hoverBlockProductInformation(){
+
+    public WebElement hoverBlockProductInformation() {
         return blockProductInformation;
     }
-    public void scrollToBlockProductInformation(){
+
+    public void scrollToBlockProductInformation() {
         WebElement elementForScroll = hoverBlockProductInformation();
         Actions scrollToBlock = new Actions(DriverProvider.getDriver());
         scrollToBlock.scrollToElement(elementForScroll);
         scrollToBlock.perform();
+    }
+
+    public void checkBeingSignIn() {
+        if (!buttonSignIn.isEmpty()) {
+            buttonSignIn.getFirst().click();
+            Utils.isElementPresent(By.cssSelector(".ui-dialog-titlebar"));
+            DriverProvider.getDriver().findElement(By.cssSelector(".ty-btn__login")).click();
+            Utils.waitForSpinnerDisappear();
+        }
     }
 }

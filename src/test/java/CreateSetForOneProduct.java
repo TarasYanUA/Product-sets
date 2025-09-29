@@ -10,9 +10,12 @@ import taras.yanishevskyi.adminPanel.AdmHomePage;
 import taras.yanishevskyi.storefront.CheckoutPage;
 import taras.yanishevskyi.adminPanel.AdmProductPage;
 import taras.yanishevskyi.storefront.StProductPage;
+import taras.yanishevskyi.storefront.Utils;
+
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
+
 import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 
 /*
@@ -30,7 +33,7 @@ public class CreateSetForOneProduct extends TestRunner {
         AdmHomePage admHomePage = new AdmHomePage();
         admHomePage.navigateTo_AppearanceSettings();
         WebElement checkboxSettingQuickView = admHomePage.settingQuickView;
-        if(!checkboxSettingQuickView.isSelected()){
+        if (!checkboxSettingQuickView.isSelected()) {
             admHomePage.settingQuickView.click();
             admHomePage.clickSaveButtonOfSettings();
         }
@@ -39,15 +42,14 @@ public class CreateSetForOneProduct extends TestRunner {
         AdmProductPage admProductPage = admHomePage.navigateToSection_Products();
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();
-        if(DriverProvider.getDriver().findElements(By.cssSelector("#box_ab__ps_")).isEmpty()) {
+        if (DriverProvider.getDriver().findElements(By.cssSelector("#box_ab__ps_")).isEmpty()) {
             admProductPage.clickAddNewSet();
             admProductPage.clickAndTypeTitleOfSet("Клюшки для гольфа");
             admProductPage.clickAddProductsToSet();
-            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            Utils.isElementPresent(By.className("ui-dialog-title"));
+            Utils.isElementPresent(By.className("ui-dialog-title"));
             admProductPage.clickSearchInCategoriesForSet();
-            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            Utils.isElementPresent(By.className("ui-dialog-title"));
             admProductPage.clickCategoryGolfClubs();
             admProductPage.clickSearchButtonForProductsAtSet();
             makePause();
@@ -58,11 +60,9 @@ public class CreateSetForOneProduct extends TestRunner {
             ((JavascriptExecutor) getDriver()).executeScript("scroll(0,500);");
             admProductPage.clickAndTypeTitleOfSet("Мячи для гольфа");
             admProductPage.clickAddProductsToSecondSet();
-            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            Utils.isElementPresent(By.className("ui-dialog-title"));
             admProductPage.clickSearchInCategoriesForSet();
-            (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                    .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+            Utils.isElementPresent(By.className("ui-dialog-title"));
             admProductPage.clickCategoryBallsForGolf();
             admProductPage.clickSearchButtonForProductsAtSet();
             makePause();
@@ -71,21 +71,19 @@ public class CreateSetForOneProduct extends TestRunner {
             admProductPage.clickButtonSaveOnEditProductPage(); //Второй набор товаров готов
             makePause();
         }
-        admProductPage.clickGearWheelOfProduct();
-        admProductPage.clickPreviewButton();
+        admProductPage.clickGearWheelAndPreviewButton();
 
         //Работаем с витриной на странице товара
-        focusBrowserTab(1);
+        Utils.focusBrowserTab(1);
         StProductPage stProductPage = new StProductPage();
         stProductPage.clickFieldSelectProducts();
         stProductPage.clickButtonSelectAllProductsForSet();
-        makePause();
 
         SoftAssert softAssert = new SoftAssert();
-        
+
         //Проверяем, что кнопка "Быстрый просмотр" присутствует у товаров из комплекта
         softAssert.assertTrue(!getDriver().findElements(By
-                .cssSelector("ul[class='ab__ps-list'] .ut2-quick-view-button")).isEmpty(),
+                        .cssSelector("ul[class='ab__ps-list'] .ut2-quick-view-button")).isEmpty(),
                 "There is no buttons 'QuickView' at selected products!");
 
         //Проверяем, что кнопка "Удаления" товара присутствует у товаров из комплекта
@@ -94,25 +92,22 @@ public class CreateSetForOneProduct extends TestRunner {
         softAssert.assertTrue(sizeOfDeleteButtons > 1, "There is no buttons 'Delete' at selected products!");
         takeScreenShot("110 Product page with a set of products");
         stProductPage.clickButtonCloseForSet();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".sol-action-buttons")));
+        Utils.isElementPresent(By.className("ui-dialog-title"));
         //Покупаем выбранный товар из комплекта через кнопку "Быстрый просмотр"
         stProductPage.clickButtonQuickViewAtSelectedProduct();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".object-container")));
+        Utils.isElementPresent(By.cssSelector(".object-container"));
         stProductPage.clickButtonAddToCart_QuickView();
-        makePause();
 
         //Проверяем, что товар добавлен в корзину
         int actualCartValue = Integer.parseInt(DriverProvider.getDriver().findElement(By.cssSelector(".ty-minicart-count")).getText());
         softAssert.assertTrue(actualCartValue >= 1, "The product has not been added to the cart!");
 
         //Выключаем товар из второй группы и проверяем, что группа без товаров не отображается на витрине.
-        focusBrowserTab(0);
+        Utils.focusBrowserTab(0);
         admProductPage.clickProductWilsonStaff();
         admProductPage.clickSwitcherDisable();
         admProductPage.clickButtonSaveOnEditProductPage(); //Выключили товар "мячи"
-        focusBrowserTab(1);
+        Utils.focusBrowserTab(1);
         DriverProvider.getDriver().navigate().refresh();
         stProductPage.clickFieldSelectProducts();
         //Проверяем, что в комплекте присутствует только одна группа
@@ -120,26 +115,19 @@ public class CreateSetForOneProduct extends TestRunner {
         softAssert.assertTrue(sizeOfGroups < 2);
         //Покупаем комплект товаров
         stProductPage.clickButtonSelectAllProductsForSet();
-        makePause();
         stProductPage.clickButtonCloseForSet();
         stProductPage.clickButtonAddToCart();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close.close")));
+        Utils.isElementPresent(By.cssSelector(".cm-notification-close.close"));
         CheckoutPage checkoutPage = stProductPage.navigateToCheckoutPage();   //Находимся на странице чекаута
+        checkoutPage.checkBeingSignIn();
         checkoutPage.clickCountryField();
         checkoutPage.selectCountryField("UA");
         checkoutPage.clickAndTypeCityField("Киев");
-        makePause();
         checkoutPage.clickPaymentMethod();
         checkoutPage.choosePaymentMethod_PhoneOrdering();
-        makePause();
         checkoutPage.checkAgreementTermsAndConditions();
-        if(!getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).isEmpty()){
-        checkoutPage.checkAgreementPersonalData();
-        }
-        checkoutPage.clickPaymentMethod();
         checkoutPage.clickButtonPlaceOrder();   //Заказ оформлен!
-        
+
         //Проверяем, что мы на странице завершения заказа
         (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ty-checkout-complete__buttons")));

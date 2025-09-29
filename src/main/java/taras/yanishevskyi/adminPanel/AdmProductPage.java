@@ -8,16 +8,19 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.yanishevskyi.constants.AbstractPage;
 
 import java.time.Duration;
+import java.util.List;
 
 import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 
 public class AdmProductPage extends AbstractPage {
-    public AdmProductPage() {super();}
+    public AdmProductPage() {
+        super();
+    }
 
     @FindBy(css = ".nav__actions-bar .dropdown-icon--tools")
     private WebElement gearwheelOfProduct;
 
-    @FindBy(xpath = "//ul[@class='dropdown-menu']//a[contains(@href, 'preview')]")
+    @FindBy(css = ".dropdown-menu a[target='_blank']")
     private WebElement previewButton;
 
     @FindBy(xpath = "//a[@class=\"products-list__image--link\"][contains(@href, 'product_id=187')]")
@@ -77,73 +80,102 @@ public class AdmProductPage extends AbstractPage {
     @FindBy(css = "a[title='Все продавцы (общий товар)']")
     private WebElement productBelongsToAllVendors;
 
+    @FindBy(css = "a[id*='premoderation_approve_']")
+    private List<WebElement> iconThumbUp;
 
-    public void clickGearWheelOfProduct(){
+
+    public void clickGearWheelAndPreviewButton() {
         gearwheelOfProduct.click();
-    }
-    public void clickPreviewButton(){
         previewButton.click();
     }
-    public void chooseProductTourStaffBag(){
+
+    public void chooseProductTourStaffBag() {
         productTourStaffBag.click();
     }
-    public void clickTabProductSets(){
+
+    public void clickTabProductSets() {
         tabProductSets.click();
     }
-    public void clickAddNewSet(){
+
+    public void clickAddNewSet() {
         addNewSet.click();
     }
-    public void clickAndTypeTitleOfSet(String value){
+
+    public void clickAndTypeTitleOfSet(String value) {
         titleOfSet.click();
         titleOfSet.sendKeys(value);
     }
-    public void clickAddProductsToSet(){
+
+    public void clickAddProductsToSet() {
         addProductsToSet.click();
         (new WebDriverWait((getDriver()), Duration.ofSeconds(3)))
                 .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
     }
-    public void clickAddProductsToSecondSet(){
+
+    public void clickAddProductsToSecondSet() {
         addProductsToSecondSet.click();
     }
-    public void clickSearchInCategoriesForSet(){
+
+    public void clickSearchInCategoriesForSet() {
         searchInCategoriesForSet.click();
     }
-    public void clickCategoryGolfClubs(){
+
+    public void clickCategoryGolfClubs() {
         categoryGolfClubs.click();
     }
-    public void clickCategoryBallsForGolf(){
+
+    public void clickCategoryBallsForGolf() {
         categoryBallsForGolf.click();
     }
-    public void clickSearchButtonForProductsAtSet(){
+
+    public void clickSearchButtonForProductsAtSet() {
         searchButtonForProductsAtSet.click();
     }
-    public void clickCheckboxForAllProducts(){
+
+    public void clickCheckboxForAllProducts() {
         checkboxForAllProducts.click();
     }
-    public void clickButtonAddProductsAndClose(){
+
+    public void clickButtonAddProductsAndClose() {
         buttonAddProductsAndClose.click();
     }
-    public void clickButtonSaveOnEditProductPage(){
+
+    public void clickButtonSaveOnEditProductPage() {
         buttonSaveOnEditProductPage.click();
     }
-    public void clickProductWilsonStaff(){productWilsonStaff.click();}
-    public void clickSwitcherDisable(){switcherDisable.click();}
-    public void clickAndTypeSearchFieldAtProductPage(String value){
+
+    public void clickProductWilsonStaff() {
+        productWilsonStaff.click();
+    }
+
+    public void clickSwitcherDisable() {
+        switcherDisable.click();
+    }
+
+    public void clickAndTypeSearchFieldAtProductPage(String value) {
         searchFieldAtProductPage.click();
         searchFieldAtProductPage.sendKeys(value);
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
     }
-    public void clickProductInSearchList(){
+
+    public void clickProductInSearchList() {
         productInSearchList.click();
     }
-    public void clickProductVendor(){
+
+    public void clickProductVendor() {
         productVendor.click();
     }
-    public void selectProductBelongsToAllVendors(){
+
+    public void selectProductBelongsToAllVendors() {
         productBelongsToAllVendors.click();
+    }
+
+    public void clickIconThumbUp() {
+        if (!iconThumbUp.isEmpty())
+            iconThumbUp.getFirst().click();
     }
 }

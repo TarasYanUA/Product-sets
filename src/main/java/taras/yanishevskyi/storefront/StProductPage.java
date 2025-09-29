@@ -42,6 +42,7 @@ public class StProductPage extends AbstractPage {
 
     public void clickButtonSelectAllProductsForSet() {
         buttonSelectAllProductsForSet.click();
+        Utils.waitForSpinnerDisappear();
     }
 
     public void clickButtonCloseForSet() {
@@ -50,13 +51,16 @@ public class StProductPage extends AbstractPage {
 
     public void clickButtonAddToCart() {
         buttonAddToCart.click();
+        Utils.waitForSpinnerDisappear();
     }
 
     public void clickButtonQuickViewAtSelectedProduct() {
         buttonQuickViewAtSelectedProduct.click();
+        Utils.waitForSpinnerDisappear();
     }
 
     public void clickButtonAddToCart_QuickView() {
         buttonAddToCart_QuickView.click();
+        Utils.waitForSpinnerDisappear();
     }
 }

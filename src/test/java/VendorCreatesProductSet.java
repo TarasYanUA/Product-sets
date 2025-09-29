@@ -1,7 +1,5 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 import taras.yanishevskyi.adminPanel.AdmCustomersPage;
@@ -10,9 +8,9 @@ import taras.yanishevskyi.adminPanel.AdmProductPage;
 import taras.yanishevskyi.constants.DriverProvider;
 import taras.yanishevskyi.storefront.CheckoutPage;
 import taras.yanishevskyi.storefront.StProductPage;
+import taras.yanishevskyi.storefront.Utils;
 
 import java.io.IOException;
-import java.time.Duration;
 import java.util.List;
 
 import static taras.yanishevskyi.constants.DriverProvider.getDriver;
@@ -35,8 +33,7 @@ public class VendorCreatesProductSet extends TestRunner {
         admHomePage.clickAndTypeSearchFieldAtManagementPage("Общие товары для продавцов");
         if (DriverProvider.getDriver().findElements(By.cssSelector("td.nowrap.right a[href*='addon=master_products']")).size() == 1) {
             admHomePage.clickButtonInstallAddon();
-            (new WebDriverWait((DriverProvider.getDriver()), Duration.ofSeconds(5))).until(ExpectedConditions
-                    .elementToBeClickable(By.cssSelector(".logo-menu__logo--cscart")));
+            Utils.isElementPresent(By.cssSelector(".logo-menu__logo--cscart"));
             DriverProvider.getDriver().navigate().refresh();
         }
 
@@ -52,7 +49,7 @@ public class VendorCreatesProductSet extends TestRunner {
         AdmCustomersPage admCustomersPage = admHomePage.navigateToSection_Customers();
         admCustomersPage.navigateToVendor_CsCart();
         admCustomersPage.logInAsUser();
-        focusBrowserTab(1);
+        Utils.focusBrowserTab(1);
 
         SoftAssert softAssert = new SoftAssert();
 
@@ -60,7 +57,7 @@ public class VendorCreatesProductSet extends TestRunner {
         admHomePage.navigateToSection_Products();
         admCustomersPage.button_AddProductFromCatalog.click();
         if (!admCustomersPage.buttons_SellThis.isEmpty()) {
-            admCustomersPage.buttons_SellThis.get(0).click();
+            admCustomersPage.buttons_SellThis.getFirst().click();
             admCustomersPage.clickAndTypeInStockField("19");
 
             //Проверяем, что вкладка "АВ: Комплекты для товаров" присутствует
@@ -79,14 +76,13 @@ public class VendorCreatesProductSet extends TestRunner {
         } else {
             System.out.println("Кнопка button_SellThis отсутствует на странице.");
         }
-        focusBrowserTab(0);
+        Utils.focusBrowserTab(0);
         admHomePage.navigateToSection_Products();
         admProductPage.clickAndTypeSearchFieldAtProductPage("X-Box 360");
-        //admProductPage.clickIconThumbUp();
+        admProductPage.clickIconThumbUp();
         admProductPage.clickProductInSearchList();
-        admProductPage.clickGearWheelOfProduct();
-        admProductPage.clickPreviewButton();
-        focusBrowserTab(2);
+        admProductPage.clickGearWheelAndPreviewButton();
+        Utils.focusBrowserTab(2);
 
         //Работаем с витриной
         //Проверяем, что мы на странице продавца CS-Cart
@@ -103,30 +99,21 @@ public class VendorCreatesProductSet extends TestRunner {
         StProductPage stProductPage = new StProductPage();
         stProductPage.clickFieldSelectProducts();
         stProductPage.clickButtonSelectAllProductsForSet();
-        makePause();
         stProductPage.clickButtonCloseForSet();
         stProductPage.clickButtonAddToCart();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(2)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".cm-notification-close.close")));
+        Utils.isElementPresent(By.cssSelector(".cm-notification-close.close"));
         CheckoutPage checkoutPage = stProductPage.navigateToCheckoutPage();   //Находимся на странице чекаута
         checkoutPage.clickCountryField();
         checkoutPage.selectCountryField("UA");
         checkoutPage.clickAndTypeCityField("Киев");
-        makePause();
         checkoutPage.clickPaymentMethod();
         checkoutPage.choosePaymentMethod_PhoneOrdering();
-        makePause();
         checkoutPage.checkAgreementTermsAndConditions();
-        if (!getDriver().findElements(By.xpath("//input[contains(@id, 'gdpr_agreements_checkout_place_order')]")).isEmpty()) {
-            checkoutPage.checkAgreementPersonalData();
-        }
         checkoutPage.checkAgreementSimtech();
-        checkoutPage.clickPaymentMethod();
         checkoutPage.clickButtonPlaceOrder();   //Заказ оформлен!
 
         //Проверяем, что мы на странице завершения заказа
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(4)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".ty-checkout-complete__buttons")));
+        Utils.isElementPresent(By.cssSelector(".ty-checkout-complete__buttons"));
         softAssert.assertTrue(getDriver().getCurrentUrl().contains("checkout.complete&order_id="),
                 "Process of placing the order has failed!");
 
