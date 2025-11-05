@@ -1,14 +1,18 @@
 package taras.yanishevskyi.storefront;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.yanishevskyi.constants.AbstractPage;
 import taras.yanishevskyi.constants.DriverProvider;
 
+import java.time.Duration;
 import java.util.List;
 
 import static taras.yanishevskyi.constants.DriverProvider.getDriver;
@@ -45,8 +49,11 @@ public class CheckoutPage extends AbstractPage {
     @FindBy(css = "select#litecheckout_country")
     private WebElement countryField;
 
-    @FindBy(css = "input#litecheckout_city_state")
+    @FindBy(css = "label[for='litecheckout_city']")
     private WebElement cityField;
+
+    @FindBy(css = "#litecheckout_city")
+    private WebElement cityFieldText;
 
     @FindBy(xpath = "(//div[@class='ty-float-left ty-orders-detail__table-image'])[4]")
     private WebElement blockProductInformation;
@@ -83,6 +90,8 @@ public class CheckoutPage extends AbstractPage {
     }
 
     public void clickButtonOrderDetails() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.elementToBeClickable(buttonOrderDetails));
         buttonOrderDetails.click();
     }
 
@@ -103,10 +112,12 @@ public class CheckoutPage extends AbstractPage {
     }
 
     public void clickAndTypeCityField(String value) {
+        JavascriptExecutor js = (JavascriptExecutor) DriverProvider.getDriver();
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'})", cityField);
         cityField.click();
-        cityField.clear();
-        cityField.sendKeys(value);
-        cityField.sendKeys(Keys.ENTER);
+        cityFieldText.clear();
+        cityFieldText.sendKeys(value);
+        cityFieldText.sendKeys(Keys.ENTER);
         Utils.waitForSpinnerDisappear();
     }
 

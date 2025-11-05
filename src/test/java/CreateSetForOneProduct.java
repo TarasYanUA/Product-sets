@@ -91,7 +91,7 @@ public class CreateSetForOneProduct extends TestRunner {
                 .cssSelector("ul[class='ab__ps-list'] span[class='ab__ps-item_quick-delete']")).size();
         softAssert.assertTrue(sizeOfDeleteButtons > 1, "There is no buttons 'Delete' at selected products!");
         takeScreenShot("110 Product page with a set of products");
-        stProductPage.clickButtonCloseForSet();
+        //stProductPage.clickButtonCloseForSet();
         Utils.isElementPresent(By.className("ui-dialog-title"));
         //Покупаем выбранный товар из комплекта через кнопку "Быстрый просмотр"
         stProductPage.clickButtonQuickViewAtSelectedProduct();
