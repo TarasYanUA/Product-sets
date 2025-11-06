@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Made full refactoring of the code.&#10;Added Utils class.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Updated drivers and vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/geckodriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -452,7 +443,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759153810968</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Updated drivers and vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1.">
+      <option name="closed" value="true" />
+      <created>1762332915512</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1762332915512</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -487,16 +486,12 @@
     <MESSAGE value="Code is improved.&#10;All test-cases work good.&#10;Changed Asserts on SoftAsserts." />
     <MESSAGE value="Updated drivers and vocabularies in pom file." />
     <MESSAGE value="Made full refactoring of the code.&#10;Added Utils class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made full refactoring of the code.&#10;Added Utils class." />
+    <MESSAGE value="Updated drivers and vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated drivers and vocabularies in pom file.&#10;Adapted to CS-Cart 4.19.1." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java</url>
-          <line>116</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/CheckoutPage.java</url>
           <line>42</line>
