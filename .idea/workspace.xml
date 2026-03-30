@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Updated drivers and vocabularies in pom file.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="1a39c76a-6881-490d-b284-424e2d51017f" name="Changes" comment="Updated drivers and libraries in pom file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/constants/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/chromedriver.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/msedgedriver.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/adminPanel/AdmProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/StProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/taras/yanishevskyi/storefront/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CreateSetForOneProduct.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/VendorCreatesProductSet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +46,7 @@
           <entry type="LOCAL">
             <value>
               <list>
-                <branch-info repo="$PROJECT_DIR$" source="CsCart_4.18.3" />
+                <branch-info repo="$PROJECT_DIR$" source="CsCart_4.20.1" />
               </list>
             </value>
           </entry>
@@ -54,7 +55,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="CsCart_4.18.3" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -65,22 +66,22 @@
     &quot;assignee&quot;: &quot;TarasYanUA&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TarasYanUA/Product-sets.git",
-    "accountId": "ff46838b-796e-4b9e-97a7-6cf607c3a446"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TarasYanUA/Product-sets.git&quot;,
+    &quot;accountId&quot;: &quot;ff46838b-796e-4b9e-97a7-6cf607c3a446&quot;
   },
-  "recentNewPullRequestHead": {
-    "server": {
-      "useHttp": false,
-      "host": "github.com",
-      "port": null,
-      "suffix": null
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
     },
-    "owner": "TarasYanUA",
-    "repository": "Product-sets"
+    &quot;owner&quot;: &quot;TarasYanUA&quot;,
+    &quot;repository&quot;: &quot;Product-sets&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -102,29 +103,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "TestNG.CreateSetForOneProduct.executor": "Run",
-    "TestNG.Product-sets/TestNG.xml.executor": "Run",
-    "TestNG.VendorCreatesProductSet.executor": "Run",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "CsCart__4.18.3",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/IDEA Projects/Product-sets (Uni2 MV)/pom.xml",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "to.speed.mode.migration.done": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;TestNG.CreateSetForOneProduct.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.Product-sets/TestNG.xml.executor&quot;: &quot;Run&quot;,
+    &quot;TestNG.VendorCreatesProductSet.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;CsCart__4.20.1&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/IDEA_Projects/Product_sets/pom.xml&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\IDEA_Projects\Product-sets\src\test\resources" />
@@ -133,7 +134,7 @@
       <recent name="C:\Idea Projects\Product-sets\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.VendorCreatesProductSet">
+  <component name="RunManager" selected="TestNG.CreateSetForOneProduct">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="taras.yanishevskyi.Main" />
       <module name="Product-sets" />
@@ -190,8 +191,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.VendorCreatesProductSet" />
         <item itemvalue="TestNG.CreateSetForOneProduct" />
+        <item itemvalue="TestNG.VendorCreatesProductSet" />
         <item itemvalue="TestNG.CreateSetForOneProduct.createSeveralSetsForOneProduct" />
         <item itemvalue="Application.Main" />
       </list>
@@ -449,7 +450,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759133656372</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Updated drivers and libraries in pom file.">
+      <option name="closed" value="true" />
+      <created>1774624615844</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1774624615844</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -483,6 +492,7 @@
     <MESSAGE value="Fixed condition in the editing product page." />
     <MESSAGE value="Code is improved.&#10;All test-cases work good.&#10;Changed Asserts on SoftAsserts." />
     <MESSAGE value="Updated drivers and vocabularies in pom file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated drivers and vocabularies in pom file." />
+    <MESSAGE value="Updated drivers and libraries in pom file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated drivers and libraries in pom file." />
   </component>
 </project>

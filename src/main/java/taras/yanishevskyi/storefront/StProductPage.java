@@ -46,16 +46,16 @@ public class StProductPage extends AbstractPage {
     }
 
     public void clickButtonCloseForSet() {
-        buttonCloseForSet.click();
+        Utils.scrollIntoViewAndClick(buttonCloseForSet);
     }
 
     public void clickButtonAddToCart() {
-        buttonAddToCart.click();
+        Utils.scrollIntoViewAndClick(buttonAddToCart);
         Utils.waitForSpinnerDisappear();
     }
 
     public void clickButtonQuickViewAtSelectedProduct() {
-        buttonQuickViewAtSelectedProduct.click();
+        Utils.scrollIntoViewAndClick(buttonQuickViewAtSelectedProduct);
         Utils.waitForSpinnerDisappear();
     }
 

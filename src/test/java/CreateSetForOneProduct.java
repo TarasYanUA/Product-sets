@@ -43,33 +43,21 @@ public class CreateSetForOneProduct extends TestRunner {
         admProductPage.chooseProductTourStaffBag();
         admProductPage.clickTabProductSets();
         if (DriverProvider.getDriver().findElements(By.cssSelector("#box_ab__ps_")).isEmpty()) {
-            admProductPage.clickAddNewSet();
+            admProductPage.addNewSet();
             admProductPage.clickAndTypeTitleOfSet("Клюшки для гольфа");
             admProductPage.clickAddProductsToSet();
-            Utils.isElementPresent(By.className("ui-dialog-title"));
-            Utils.isElementPresent(By.className("ui-dialog-title"));
-            admProductPage.clickSearchInCategoriesForSet();
-            Utils.isElementPresent(By.className("ui-dialog-title"));
-            admProductPage.clickCategoryGolfClubs();
-            admProductPage.clickSearchButtonForProductsAtSet();
-            makePause();
+            admProductPage.searchCategoryForProduct(admProductPage.categoryGolfClubs);
             admProductPage.clickCheckboxForAllProducts();
             admProductPage.clickButtonAddProductsAndClose();
             admProductPage.clickButtonSaveOnEditProductPage(); //Первый набор товаров готов
-            admProductPage.clickAddNewSet();
+            admProductPage.addNewSet();
             ((JavascriptExecutor) getDriver()).executeScript("scroll(0,500);");
             admProductPage.clickAndTypeTitleOfSet("Мячи для гольфа");
-            admProductPage.clickAddProductsToSecondSet();
-            Utils.isElementPresent(By.className("ui-dialog-title"));
-            admProductPage.clickSearchInCategoriesForSet();
-            Utils.isElementPresent(By.className("ui-dialog-title"));
-            admProductPage.clickCategoryBallsForGolf();
-            admProductPage.clickSearchButtonForProductsAtSet();
-            makePause();
+            admProductPage.clickAddProductsToSet();
+            admProductPage.searchCategoryForProduct(admProductPage.categoryBallsForGolf);
             admProductPage.clickCheckboxForAllProducts();
             admProductPage.clickButtonAddProductsAndClose();
             admProductPage.clickButtonSaveOnEditProductPage(); //Второй набор товаров готов
-            makePause();
         }
         admProductPage.clickGearWheelAndPreviewButton();
 

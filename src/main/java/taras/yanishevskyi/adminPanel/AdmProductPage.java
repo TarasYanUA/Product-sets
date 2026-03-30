@@ -3,14 +3,10 @@ package taras.yanishevskyi.adminPanel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import taras.yanishevskyi.constants.AbstractPage;
+import taras.yanishevskyi.storefront.Utils;
 
-import java.time.Duration;
 import java.util.List;
-
-import static taras.yanishevskyi.constants.DriverProvider.getDriver;
 
 public class AdmProductPage extends AbstractPage {
     public AdmProductPage() {
@@ -32,23 +28,32 @@ public class AdmProductPage extends AbstractPage {
     @FindBy(xpath = "//div[@id=\"content_ab__product_sets\"]//a[@class='btn cm-tooltip']")
     private WebElement addNewSet;
 
-    @FindBy(xpath = "//input[@name=\"product_data[ab__product_sets][1][set]\"]")
-    private WebElement titleOfSet;
+    @FindBy(css = "input[name^='product_data[ab__product_sets]'][name$='[set]']")
+    private List<WebElement> titleOfSet;
 
-    @FindBy(css = "a.cm-external-click.btn")
-    private WebElement addProductsToSet;
-
-    @FindBy(xpath = "//a[contains(@data-ca-external-click-id, 'opener_picker_ab__ps_set__products_')]")
-    private WebElement addProductsToSecondSet;
+    @FindBy(css = ".buttons-container .cm-external-click")
+    private List<WebElement> addProductsToSet;
 
     @FindBy(css = ".ui-dialog-content .object-categories-add__picker")
     private WebElement searchInCategoriesForSet;
 
+    @FindBy(css = "span[id*='off_comp'][class='hand cm-combination-cat cm-uncheck hidden']")
+    public List<WebElement> collapsedCategoryList;
+
+    @FindBy(xpath = "//span[text()='Магазин: CS-Cart']/..//span[contains(@class, 'icon-caret-right')]")
+    public WebElement expandCategoryList;
+
+    @FindBy(xpath = "//tr[contains(@id, 'cat_203')]/..//span[contains(@class, 'icon-caret-right')]")
+    public WebElement popup_category_Sport;
+
+    @FindBy(xpath = "//tr[contains(@id, 'cat_211')]/..//span[contains(@class, 'icon-caret-right')]")
+    public WebElement popup_category_Golf;
+
     @FindBy(id = "category_212")
-    private WebElement categoryGolfClubs;
+    public WebElement categoryGolfClubs;
 
     @FindBy(id = "category_213")
-    private WebElement categoryBallsForGolf;
+    public WebElement categoryBallsForGolf;
 
     @FindBy(xpath = "//input[@name='dispatch[products.picker]']")
     private WebElement searchButtonForProductsAtSet;
@@ -91,45 +96,41 @@ public class AdmProductPage extends AbstractPage {
 
     public void chooseProductTourStaffBag() {
         productTourStaffBag.click();
+        Utils.closeAllNotifications();
     }
 
     public void clickTabProductSets() {
         tabProductSets.click();
     }
 
-    public void clickAddNewSet() {
+    public void addNewSet() {
         addNewSet.click();
+        Utils.makePause(1000);
     }
 
     public void clickAndTypeTitleOfSet(String value) {
-        titleOfSet.click();
-        titleOfSet.sendKeys(value);
+        titleOfSet.getLast().click();
+        titleOfSet.getLast().sendKeys(value);
     }
 
     public void clickAddProductsToSet() {
-        addProductsToSet.click();
-        (new WebDriverWait((getDriver()), Duration.ofSeconds(3)))
-                .until(ExpectedConditions.visibilityOfElementLocated(By.className("ui-dialog-title")));
+        addProductsToSet.getLast().click();
+        Utils.isElementPresent(By.className("ui-dialog-title"));
     }
 
-    public void clickAddProductsToSecondSet() {
-        addProductsToSecondSet.click();
-    }
-
-    public void clickSearchInCategoriesForSet() {
+    public void searchCategoryForProduct(WebElement category) {
         searchInCategoriesForSet.click();
-    }
-
-    public void clickCategoryGolfClubs() {
-        categoryGolfClubs.click();
-    }
-
-    public void clickCategoryBallsForGolf() {
-        categoryBallsForGolf.click();
-    }
-
-    public void clickSearchButtonForProductsAtSet() {
+        Utils.isElementPresent(By.className("ui-dialog-title"));
+        if (!collapsedCategoryList.isEmpty()) {
+            Utils.waitForElementToBeClickableAndClick(expandCategoryList);
+            Utils.waitForElementToBeClickableAndClick(popup_category_Sport);
+            Utils.waitForElementToBeClickableAndClick(popup_category_Golf);
+            Utils.waitForElementToBeClickableAndClick(category);
+        } else {
+            Utils.waitForElementToBeClickableAndClick(category);
+        }
         searchButtonForProductsAtSet.click();
+        Utils.makePause(2000);
     }
 
     public void clickCheckboxForAllProducts() {
@@ -142,6 +143,7 @@ public class AdmProductPage extends AbstractPage {
 
     public void clickButtonSaveOnEditProductPage() {
         buttonSaveOnEditProductPage.click();
+        Utils.makePause(2000);
     }
 
     public void clickProductWilsonStaff() {
@@ -155,11 +157,7 @@ public class AdmProductPage extends AbstractPage {
     public void clickAndTypeSearchFieldAtProductPage(String value) {
         searchFieldAtProductPage.click();
         searchFieldAtProductPage.sendKeys(value);
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
+        Utils.makePause(3000);
     }
 
     public void clickProductInSearchList() {

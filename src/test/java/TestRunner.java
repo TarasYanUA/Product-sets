@@ -5,6 +5,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import taras.yanishevskyi.constants.DriverProvider;
 import taras.yanishevskyi.adminPanel.AdmHomePage;
+import taras.yanishevskyi.storefront.Utils;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class TestRunner {
         AdmHomePage admHomePage = new AdmHomePage();
         admHomePage.clickButtonAuthorization();
         admHomePage.closeBottomAdminPanel();
+        Utils.closeAllNotifications();
     }
 
     @AfterMethod
@@ -39,13 +41,5 @@ public class TestRunner {
     public void takeScreenShot(String screenshotName) throws IOException {
         File scrFile = ((TakesScreenshot) DriverProvider.getDriver()).getScreenshotAs(OutputType.FILE);
         FileUtils.copyFile(scrFile, new File("mySuccessScreenshots\\" + screenshotName + ".jpg"));
-    }
-
-    public void makePause() {
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }

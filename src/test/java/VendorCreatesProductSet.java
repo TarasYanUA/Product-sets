@@ -65,8 +65,7 @@ public class VendorCreatesProductSet extends TestRunner {
                     "There is no the tab of our add-on on the editing product page!");
 
             admCustomersPage.clickTabProductSets();
-            admProductPage.clickAddNewSet();
-            makePause();
+            admProductPage.addNewSet();
             admProductPage.clickAddProductsToSet();
             admCustomersPage.selectAProductForSet(By.cssSelector("input[value='255']"));
             admCustomersPage.selectAProductForSet(By.cssSelector("input[value='257']"));
